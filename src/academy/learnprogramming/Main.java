@@ -13,6 +13,14 @@ public class Main {
 
         highScore = calculateScore(true, 10_000, 8, 200);
         System.out.println("Your final score was " + highScore);
+
+        // challenge
+        displayHighScorePosition("Matt", calculateHighScorePosition(1500));
+        displayHighScorePosition("Bob", calculateHighScorePosition(900));
+        displayHighScorePosition("Joe", calculateHighScorePosition(400));
+        displayHighScorePosition("Tim", calculateHighScorePosition(50));
+        // he used tim, bob, Percy, & Gilbert :P
+
     }
 
     public static int calculateScore(boolean gameOver, int score, int levelCompleted, int bonus) {
@@ -24,5 +32,21 @@ public class Main {
         }
 
         return finalScore;
+    }
+
+    public static void displayHighScorePosition(String player, int position) {
+        System.out.println(String.format("%s managed to get into position %d on the high score table", player, position));
+    }
+
+    public static int calculateHighScorePosition(int score) {
+        if (score >= 1000) {
+            return 1;
+        } else if (score >= 500 && score < 1000) {
+            return 2;
+        } else if (score >= 100 && score < 500) {
+            return 3;
+        } else {
+            return 4;
+        }
     }
 }
