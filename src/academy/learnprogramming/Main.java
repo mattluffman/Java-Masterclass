@@ -39,14 +39,15 @@ public class Main {
     }
 
     public static int calculateHighScorePosition(int score) {
+        int result = 4;
         if (score >= 1000) {
-            return 1;
+            result = 1;
         } else if (score >= 500) {
-            return 2;
+            result = 2;
         } else if (score >= 100) {
-            return 3;
+            result = 3;
         }
 
-        return 4;
+        return result;
     }
 }
