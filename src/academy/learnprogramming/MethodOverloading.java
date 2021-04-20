@@ -21,6 +21,10 @@ public class MethodOverloading {
         System.out.println(result);
         result = calcFeetAndInchesToCentimeters(8.7);
         System.out.println(result);
+        result = calcFeetAndInchesToCentimeters(-18, 8.7);
+        System.out.println(result);
+        result = calcFeetAndInchesToCentimeters(-10);
+        System.out.println(result);
     }
 
     public static int calculateScore(String playerName, int score) {
