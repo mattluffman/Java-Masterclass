@@ -10,6 +10,13 @@ public class Main {
 
     public static void main(String[] args) {
         testSpeedConverter();
+        // testPositiveNegativeZero();
+    }
+
+    public static void testPositiveNegativeZero() {
+        PositiveNegativeZero.checkNumber(5);
+        PositiveNegativeZero.checkNumber(-10);
+        PositiveNegativeZero.checkNumber(0);
     }
 
     private static void testSpeedConverter() {
