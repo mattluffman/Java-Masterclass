@@ -4,7 +4,6 @@ package academy.learnprogramming.exercises;
  * @author Matt Luffman
  * Date: 4/20/2021
  * Time: 12:43 AM
- * @since A.P. 5.0
  */
 public class Main {
 

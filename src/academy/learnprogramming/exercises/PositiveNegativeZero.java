@@ -4,7 +4,6 @@ package academy.learnprogramming.exercises;
  * @author Matt Luffman
  * Date: 4/19/2021
  * Time: 11:43 PM
- * @since A.P. 5.0
  */
 public class PositiveNegativeZero {
 

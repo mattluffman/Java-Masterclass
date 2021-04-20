@@ -6,7 +6,6 @@ package academy.learnprogramming.exercises;
  * @author Matt Luffman
  * Date: 4/19/2021
  * Time: 11:55 PM
- * @since A.P. 5.0
  */
 public class SpeedConverter {
 
