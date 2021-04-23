@@ -44,9 +44,9 @@ public class Main {
     }
 
     private static void testBarkingDog() {
-        BarkingDog.shouldWakeUp(true, 1); // should return true
-        BarkingDog.shouldWakeUp(false, 2); // should return false since the dog is not barking.
-        BarkingDog.shouldWakeUp(true, 8); // should return false, since it's not before 8.
-        BarkingDog.shouldWakeUp(true, -1); // should return false since the hourOfDay parameter needs to be in a range 0-23.
+        assert BarkingDog.shouldWakeUp(true, 1); // should return true
+        assert !BarkingDog.shouldWakeUp(false, 2); // should return false since the dog is not barking.
+        assert !BarkingDog.shouldWakeUp(true, 8); // should return false, since it's not before 8.
+        assert !BarkingDog.shouldWakeUp(true, -1); // should return false since the hourOfDay parameter needs to be in a range 0-23.
     }
 }
