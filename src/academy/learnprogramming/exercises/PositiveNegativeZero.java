@@ -1,6 +1,8 @@
 package academy.learnprogramming.exercises;
 
 /**
+ * section 4, coding exercise example
+ *
  * @author Matt Luffman
  * Date: 4/19/2021
  * Time: 11:43 PM

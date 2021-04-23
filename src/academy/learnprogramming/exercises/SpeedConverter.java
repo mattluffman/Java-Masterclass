@@ -1,7 +1,7 @@
 package academy.learnprogramming.exercises;
 
 /**
- * lecture 55, coding exercise speed converter
+ * lecture 55, coding exercise 2, speed converter
  *
  * @author Matt Luffman
  * Date: 4/19/2021
