@@ -10,7 +10,8 @@ public class Main {
     public static void main(String[] args) {
         // testPositiveNegativeZero();
         // testSpeedConverter();
-        testMegaBytesConverter();
+        // testMegaBytesConverter();
+        testBarkingDog();
     }
 
     public static void testPositiveNegativeZero() {
@@ -40,5 +41,12 @@ public class Main {
         MegaBytesConverter.printMegaBytesAndKiloBytes(2500); // "2500 KB = 2 MB and 452 KB"
         MegaBytesConverter.printMegaBytesAndKiloBytes(-1024); // "Invalid Value" because parameter is less than 0.
         MegaBytesConverter.printMegaBytesAndKiloBytes(5000); // "5000 KB = 4 MB and 904 KB"
+    }
+
+    private static void testBarkingDog() {
+        BarkingDog.shouldWakeUp(true, 1); // should return true
+        BarkingDog.shouldWakeUp(false, 2); // should return false since the dog is not barking.
+        BarkingDog.shouldWakeUp(true, 8); // should return false, since it's not before 8.
+        BarkingDog.shouldWakeUp(true, -1); // should return false since the hourOfDay parameter needs to be in a range 0-23.
     }
 }
