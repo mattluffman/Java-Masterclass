@@ -46,7 +46,7 @@ public class MegaBytesConverter {
      * NOTE: The printMegaBytesAndKiloBytes method  needs to be defined as public static like we have been doing so far in the course.NOTE: Do not add a  main method to solution code.
      */
     public static void printMegaBytesAndKiloBytes(int kiloBytes) {
-        // Note: if this wasn't an exercise I'd not use a return at the top, I'd throw & catch an InvalidArgumentException
+        // Note: if this wasn't an exercise I'd not use a return at the top, I'd throw & catch an IllegalArgumentException
         if (kiloBytes < 0) {
             System.out.println("Invalid Value");
             return;
