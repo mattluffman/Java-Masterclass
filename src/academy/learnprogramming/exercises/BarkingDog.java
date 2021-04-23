@@ -46,11 +46,7 @@ public class BarkingDog {
                 throw new IllegalArgumentException("hourOfDay must be greater than 0 & less than 24");
             }
 
-            boolean wakeUp = false;
-            if (barking && (hourOfDay < 8 || hourOfDay > 22)) {
-                wakeUp = true;
-            }
-            return wakeUp;
+            return barking && (hourOfDay < 8 || hourOfDay > 22);
         } catch (IllegalArgumentException e) {
             System.out.println("Invalid Value");
             return false;
