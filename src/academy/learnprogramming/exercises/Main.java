@@ -11,7 +11,8 @@ public class Main {
         // testPositiveNegativeZero();
         // testSpeedConverter();
         // testMegaBytesConverter();
-        testBarkingDog();
+        // testBarkingDog();
+        testLeapYear();
     }
 
     public static void testPositiveNegativeZero() {
@@ -48,5 +49,12 @@ public class Main {
         assert !BarkingDog.shouldWakeUp(false, 2); // should return false since the dog is not barking.
         assert !BarkingDog.shouldWakeUp(true, 8); // should return false, since it's not before 8.
         assert !BarkingDog.shouldWakeUp(true, -1); // should return false since the hourOfDay parameter needs to be in a range 0-23.
+    }
+
+    private static void testLeapYear() {
+        assert !LeapYear.isLeapYear(-1600); //  should return false since the parameter is not in range (1-9999)
+        assert LeapYear.isLeapYear(1600);  // should return true since 1600 is a leap year
+        assert !LeapYear.isLeapYear(2017);  // should return false since 2017 is not a leap year
+        assert LeapYear.isLeapYear(2000);  //  should return true because 2000 is a leap year
     }
 }
