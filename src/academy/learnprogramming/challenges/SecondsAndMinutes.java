@@ -12,7 +12,8 @@ public class SecondsAndMinutes {
         System.out.println(getDurationString(62, 12));
         System.out.println(getDurationString(-62, 12));
         System.out.println(getDurationString(3660));
-        System.out.println(getDurationString(3600));
+        System.out.println(getDurationString(3660));
+        System.out.println(getDurationString(3945L));
     }
 
     public static String getDurationString(long minutes, long seconds) {
@@ -21,7 +22,22 @@ public class SecondsAndMinutes {
         } else {
             long hours = minutes / 60;
             long remainingMinutes = minutes % 60;
-            return String.format("%dh %dm %ds", hours, remainingMinutes, seconds);
+
+            String hoursStr = hours + "h";
+            if (hours < 10) {
+                hoursStr = "0" + hoursStr;
+            }
+
+            String minStr = remainingMinutes + "m";
+            if (remainingMinutes < 10) {
+                minStr = "0" + minStr;
+            }
+
+            String secondsStr = remainingMinutes + "s";
+            if (remainingMinutes < 10) {
+                secondsStr = "0" + secondsStr;
+            }
+            return String.format("%s %s %s", hoursStr, minStr, secondsStr);
         }
     }
 
