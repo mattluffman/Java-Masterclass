@@ -15,7 +15,7 @@ public class Main {
         // testLeapYear();
         // testDecimalComparitor();
         // testEqualSumChecker();
-        testHasTeen();
+        // testHasTeen();
     }
 
     public static void testPositiveNegativeZero() {
