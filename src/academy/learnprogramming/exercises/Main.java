@@ -14,7 +14,8 @@ public class Main {
         // testBarkingDog();
         // testLeapYear();
         // testDecimalComparitor();
-        testEqualSumChecker();
+        // testEqualSumChecker();
+        testHasTeen();
     }
 
     public static void testPositiveNegativeZero() {
@@ -59,7 +60,7 @@ public class Main {
         assert !LeapYear.isLeapYear(2017);  // should return false since 2017 is not a leap year
         assert LeapYear.isLeapYear(2000);  //  should return true because 2000 is a leap year
     }
-    
+
     private static void testDecimalComparitor() {
         assert DecimalComparator.areEqualByThreeDecimalPlaces(-3.1756, -3.175); // should return true since numbers are equal up to 3 decimal places.
         assert !DecimalComparator.areEqualByThreeDecimalPlaces(3.175, 3.176); // should return false since numbers are not equal up to 3 decimal places
@@ -71,5 +72,13 @@ public class Main {
         assert !EqualSumChecker.hasEqualSum(1, 1, 1);  // should return false since 1 + 1 is not equal to 1
         assert EqualSumChecker.hasEqualSum(1, 1, 2);  // should return true since 1 + 1 is equal to 2
         assert EqualSumChecker.hasEqualSum(1, -1, 0);  // should return true since 1 + (-1) is 1 - 1 and is equal to 0
+    }
+
+    private static void testHasTeen() {
+        assert TeenNumberChecker.hasTeen(9, 99, 19); // should return true since 19 is in range 13 - 19
+        assert TeenNumberChecker.hasTeen(23, 15, 42); //  should return true since 15 is in range 13 - 19
+        assert !TeenNumberChecker.hasTeen(22, 23, 34); //  should return false since numbers 22, 23, 34 are not in range 13-19
+        assert !TeenNumberChecker.isTeen(9); //  should return false since 9 is in not range 13 - 19
+        assert TeenNumberChecker.isTeen(13); // should return true since 13 is in range 13 - 19
     }
 }
