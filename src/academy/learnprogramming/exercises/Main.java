@@ -16,7 +16,8 @@ public class Main {
         // testDecimalComparitor();
         // testEqualSumChecker();
         // testHasTeen();
-        testArea();
+        // testArea();
+        testMinYearDaysCalc();
     }
 
     public static void testPositiveNegativeZero() {
@@ -88,5 +89,11 @@ public class Main {
         assert AreaCalculator.area(-1) == -1.0; // should return -1 since the parameter is negative
         assert AreaCalculator.area(5.0, 4.0) == 20.0; // should return 20.0 (5 * 4 = 20)
         assert AreaCalculator.area(-1.0, 4.0) == -1.0; // should return -1 since first the parameter is negative
+    }
+
+    private static void testMinYearDaysCalc() {
+        MinutesToYearsDaysCalculator.printYearsAndDays(525600);
+        MinutesToYearsDaysCalculator.printYearsAndDays(1051200);
+        MinutesToYearsDaysCalculator.printYearsAndDays(561600);
     }
 }
