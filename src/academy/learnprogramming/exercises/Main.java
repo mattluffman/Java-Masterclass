@@ -13,7 +13,8 @@ public class Main {
         // testMegaBytesConverter();
         // testBarkingDog();
         // testLeapYear();
-        testDecimalComparitor();
+        // testDecimalComparitor();
+        testEqualSumChecker();
     }
 
     public static void testPositiveNegativeZero() {
@@ -64,5 +65,11 @@ public class Main {
         assert !DecimalComparator.areEqualByThreeDecimalPlaces(3.175, 3.176); // should return false since numbers are not equal up to 3 decimal places
         assert DecimalComparator.areEqualByThreeDecimalPlaces(3.0, 3.0); // should return true since numbers are equal up to 3 decimal places.
         assert !DecimalComparator.areEqualByThreeDecimalPlaces(-3.123, 3.123); // should return false since numbers are not equal up to 3 decimal places.
+    }
+
+    private static void testEqualSumChecker() {
+        assert !EqualSumChecker.hasEqualSum(1, 1, 1);  // should return false since 1 + 1 is not equal to 1
+        assert EqualSumChecker.hasEqualSum(1, 1, 2);  // should return true since 1 + 1 is equal to 2
+        assert EqualSumChecker.hasEqualSum(1, -1, 0);  // should return true since 1 + (-1) is 1 - 1 and is equal to 0
     }
 }
