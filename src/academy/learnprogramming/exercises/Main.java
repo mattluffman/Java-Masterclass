@@ -16,6 +16,7 @@ public class Main {
         // testDecimalComparitor();
         // testEqualSumChecker();
         // testHasTeen();
+        testArea();
     }
 
     public static void testPositiveNegativeZero() {
@@ -80,5 +81,12 @@ public class Main {
         assert !TeenNumberChecker.hasTeen(22, 23, 34); //  should return false since numbers 22, 23, 34 are not in range 13-19
         assert !TeenNumberChecker.isTeen(9); //  should return false since 9 is in not range 13 - 19
         assert TeenNumberChecker.isTeen(13); // should return true since 13 is in range 13 - 19
+    }
+
+    private static void testArea() {
+        assert AreaCalculator.area(5.0) == 78.53981633974483; //should return 78.53975 <- incorrect
+        assert AreaCalculator.area(-1) == -1.0; // should return -1 since the parameter is negative
+        assert AreaCalculator.area(5.0, 4.0) == 20.0; // should return 20.0 (5 * 4 = 20)
+        assert AreaCalculator.area(-1.0, 4.0) == -1.0; // should return -1 since first the parameter is negative
     }
 }
