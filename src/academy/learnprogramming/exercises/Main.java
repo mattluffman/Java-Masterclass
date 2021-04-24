@@ -12,7 +12,8 @@ public class Main {
         // testSpeedConverter();
         // testMegaBytesConverter();
         // testBarkingDog();
-        testLeapYear();
+        // testLeapYear();
+        testDecimalComparitor();
     }
 
     public static void testPositiveNegativeZero() {
@@ -56,5 +57,12 @@ public class Main {
         assert LeapYear.isLeapYear(1600);  // should return true since 1600 is a leap year
         assert !LeapYear.isLeapYear(2017);  // should return false since 2017 is not a leap year
         assert LeapYear.isLeapYear(2000);  //  should return true because 2000 is a leap year
+    }
+    
+    private static void testDecimalComparitor() {
+        assert DecimalComparator.areEqualByThreeDecimalPlaces(-3.1756, -3.175); // should return true since numbers are equal up to 3 decimal places.
+        assert !DecimalComparator.areEqualByThreeDecimalPlaces(3.175, 3.176); // should return false since numbers are not equal up to 3 decimal places
+        assert DecimalComparator.areEqualByThreeDecimalPlaces(3.0, 3.0); // should return true since numbers are equal up to 3 decimal places.
+        assert !DecimalComparator.areEqualByThreeDecimalPlaces(-3.123, 3.123); // should return false since numbers are not equal up to 3 decimal places.
     }
 }
