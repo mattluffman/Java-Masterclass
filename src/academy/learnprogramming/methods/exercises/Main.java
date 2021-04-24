@@ -1,4 +1,4 @@
-package academy.learnprogramming.exercises;
+package academy.learnprogramming.methods.exercises;
 
 /**
  * @author Matt Luffman

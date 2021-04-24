@@ -1,4 +1,4 @@
-package academy.learnprogramming.exercises;
+package academy.learnprogramming.methods.exercises;
 
 /**
  * section 4, exercise 3, barking dog

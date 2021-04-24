@@ -1,4 +1,4 @@
-package academy.learnprogramming.exercises;
+package academy.learnprogramming.methods.exercises;
 
 /**
  * lecture 55, coding exercise 2, speed converter

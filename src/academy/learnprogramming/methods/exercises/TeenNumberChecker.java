@@ -1,6 +1,4 @@
-package academy.learnprogramming.exercises;
-
-import java.util.function.Predicate;
+package academy.learnprogramming.methods.exercises;
 
 /**
  * section 4, exercise 7

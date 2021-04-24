@@ -1,4 +1,4 @@
-package academy.learnprogramming.challenges;
+package academy.learnprogramming.methods.challenges;
 
 /**
  * section 4, lecture 60 challenge Seconds & minutes
