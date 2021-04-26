@@ -18,7 +18,8 @@ public class Main {
         // testHasTeen();
         // testArea();
         // testMinYearDaysCalc();
-        testIntEqualityPrinter();
+        // testIntEqualityPrinter();
+        testCat();
     }
 
     public static void testPositiveNegativeZero() {
@@ -103,5 +104,11 @@ public class Main {
         IntEqualityPrinter.printEqual(1, 1, 2); //should print text Neither all are equal or different
         IntEqualityPrinter.printEqual(-1, -1, -1); //should print text Invalid Value
         IntEqualityPrinter.printEqual(1, 2, 3); //should print text All numbers are different
+    }
+
+    private static void testCat() {
+        assert !PlayingCat.isCatPlaying(true, 10); //should return false since temperature is not in range 25 - 45
+        assert !PlayingCat.isCatPlaying(false, 36); //should return false since temperature is not in range 25 - 35 (summer parameter is false)
+        assert PlayingCat.isCatPlaying(false, 35); //should return true since temperature is in range 25 - 35
     }
 }
