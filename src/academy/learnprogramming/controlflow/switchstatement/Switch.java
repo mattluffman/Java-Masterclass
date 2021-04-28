@@ -38,6 +38,5 @@ public class Switch {
                 System.out.println("Was not 1, 2, 3, 4 or 5");
                 break; // always add breaks, even for the default. Will be less confusing to jr devs.
         }
-
     }
 }
