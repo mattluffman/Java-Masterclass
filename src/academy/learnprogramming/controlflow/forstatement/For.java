@@ -27,6 +27,20 @@ public class For {
         for (int i = 2; i < 9; ++i) { // i scope is only within the for block
             System.out.println("10,000 at " + i + "% interest = " + calculateInterest(10000.0, i));
         }
+        System.out.println();
+
+        // version that ensures you don't get the long list of 0s for the 7 iteration
+        for (int i = 2; i < 9; ++i) { // i scope is only within the for block
+            System.out.println("10,000 at " + i + "% interest = " + String.format("%.2f", calculateInterest(10000.0, i)));
+        }
+        System.out.println();
+
+        // 2nd mini challenge - how would you modify the loop above to do the
+        // same this as shown but start from 8 & work back to 2
+        for (int i = 8; i > 1; --i) { // i scope is only within the for block
+            System.out.println("10,000 at " + i + "% interest = " + String.format("%.2f", calculateInterest(10000.0, i)));
+        }
+
     }
 
     public static double calculateInterest(double amount, double interestRate) {
