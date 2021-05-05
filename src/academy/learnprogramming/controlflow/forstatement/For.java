@@ -23,8 +23,10 @@ public class For {
         }
 
         // mini challenge
-        // using for, call the method below for values 2-8, with amoutn 10k
-
+        // using for, call the method below for values 2-8, with amount 10k
+        for (int i = 2; i < 9; ++i) { // i scope is only within the for block
+            System.out.println("10,000 at " + i + "% interest = " + calculateInterest(10000.0, i));
+        }
     }
 
     public static double calculateInterest(double amount, double interestRate) {
