@@ -16,7 +16,7 @@ public class Prime {
     public static void main(String[] args) {
         int primeCount = 0;
         for (int i = 1; i < 501; ++i) {
-            if (primeCount == 3) {
+            if (primeCount == 10) {
                 break;
             }
 
@@ -33,7 +33,7 @@ public class Prime {
             return false;
         }
 
-        for (int i = 2; i <= n / 2; ++i) {
+        for (int i = 2; i <= (long) Math.sqrt(n); ++i) {
             if (n % i == 0) {
                 return false;
             }
