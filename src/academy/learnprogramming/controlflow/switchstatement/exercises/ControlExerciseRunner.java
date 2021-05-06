@@ -52,6 +52,5 @@ public class ControlExerciseRunner {
         assert getDaysInMonth(6, 12) == 30;
         assert getDaysInMonth(9, 12) == 30;
         assert getDaysInMonth(11, 12) == 30;
-
     }
 }

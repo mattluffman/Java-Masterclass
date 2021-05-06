@@ -32,6 +32,6 @@ public class Sum3And5 {
             }
         }
 
-        System.out.println("Sum of " + COUNT_LIMIT + " numbers that were divisible by 3 & 5: " + sum);
+        System.out.println("Sum of first " + COUNT_LIMIT + " numbers that were divisible by 3 & 5: " + sum);
     }
 }
