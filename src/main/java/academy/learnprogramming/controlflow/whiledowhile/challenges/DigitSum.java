@@ -41,6 +41,8 @@ public class DigitSum {
         assert sumDigits(9) == -1;
         assert sumDigits(125) == 8;
         assert sumDigits(12567) == 21;
+
+        System.out.println("The sum of the digits in the number 32123 is " + sumDigits(32123));
     }
 
     public static int sumDigits(int number) {
@@ -50,9 +52,11 @@ public class DigitSum {
         }
 
         int sum = 0;
+        // his solution did this with a regular while, which is just fine
         do {
             int lsd = number % 10;
             sum += lsd;
+            // drop the least significant digit
             number /= 10;
         } while (number > 0);
 
