@@ -1,6 +1,8 @@
 package academy.learnprogramming.controlflow.whiledowhile;
 
 /**
+ * section 5, lecture 68-69
+ *
  * @author Matt Luffman
  * Date: 5/13/2021
  * Time: 5:00 PM
