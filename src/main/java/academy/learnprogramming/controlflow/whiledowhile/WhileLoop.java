@@ -39,6 +39,7 @@ public class WhileLoop {
         // Challenge 1
         int number = 4;
         int finishNumber = 20;
+        int evenNumbers = 0;
         while (number <= finishNumber) {
             number++;
             if (!isEvenNumber(number)) {
@@ -46,7 +47,15 @@ public class WhileLoop {
             }
 
             System.out.println("Even number " + number);
+            evenNumbers++;
+
+            if (evenNumbers == 5) {
+                break;
+            }
         }
+
+        // challenge 2, modify the above to count number of even #s, & break at 5. Display # at end
+        System.out.println("Number of even numbers: " + evenNumbers);
     }
 
     public static boolean isEvenNumber(int number) {
