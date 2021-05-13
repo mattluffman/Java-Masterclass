@@ -10,10 +10,10 @@ import static academy.learnprogramming.controlflow.switchstatement.exercises.Num
  * Date: 4/28/2021
  * Time: 5:35 PM
  */
-public class ControlExerciseRunner {
+public class SwitchExerciseRunner {
 
     public static void main(String[] args) {
-        // testNumberInWord();
+        testNumberInWord();
         testNumberOfDaysInMonth();
     }
 
@@ -39,7 +39,8 @@ public class ControlExerciseRunner {
         assert !isLeapYear(2017);
         assert isLeapYear(2000);
 
-        assert getDaysInMonth(1, 1) == -1;
+        assert getDaysInMonth(1, -1) == -1;
+        assert getDaysInMonth(-1, 1) == -1;
         assert getDaysInMonth(2, 2020) == 29;
         assert getDaysInMonth(2, 2021) == 28;
         assert getDaysInMonth(3, 12) == 31;
