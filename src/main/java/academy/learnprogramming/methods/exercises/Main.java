@@ -8,17 +8,17 @@ package academy.learnprogramming.methods.exercises;
 public class Main {
 
     public static void main(String[] args) {
-        // testPositiveNegativeZero();
-        // testSpeedConverter();
-        // testMegaBytesConverter();
-        // testBarkingDog();
-        // testLeapYear();
-        // testDecimalComparitor();
-        // testEqualSumChecker();
-        // testHasTeen();
-        // testArea();
-        // testMinYearDaysCalc();
-        // testIntEqualityPrinter();
+        testPositiveNegativeZero();
+        testSpeedConverter();
+        testMegaBytesConverter();
+        testBarkingDog();
+        testLeapYear();
+        testDecimalComparitor();
+        testEqualSumChecker();
+        testHasTeen();
+        testArea();
+        testMinYearDaysCalc();
+        testIntEqualityPrinter();
         testCat();
     }
 
