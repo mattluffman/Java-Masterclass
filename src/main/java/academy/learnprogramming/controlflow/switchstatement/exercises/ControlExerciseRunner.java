@@ -39,7 +39,8 @@ public class ControlExerciseRunner {
         assert !isLeapYear(2017);
         assert isLeapYear(2000);
 
-        assert getDaysInMonth(1, 1) == -1;  //TODO: fix this
+        assert getDaysInMonth(1, -1) == -1;
+        assert getDaysInMonth(-1, 1) == -1;
         assert getDaysInMonth(2, 2020) == 29;
         assert getDaysInMonth(2, 2021) == 28;
         assert getDaysInMonth(3, 12) == 31;
