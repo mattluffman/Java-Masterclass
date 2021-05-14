@@ -1,5 +1,6 @@
 package academy.learnprogramming.controlflow.whiledowhile.exercises;
 
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.PalindromeChecker.isPalindrome;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.SharedDigit.hasSharedDigit;
 
 /**
@@ -13,6 +14,7 @@ public class WhileExerciseRunner {
 
     public static void main(String[] args) {
         testHasSharedDigit();
+        testIsPalindrome();
     }
 
     private static void testHasSharedDigit() {
@@ -20,5 +22,12 @@ public class WhileExerciseRunner {
         System.out.println("hasSharedDigit(9, 99); should return false: " + hasSharedDigit(9, 99));
         System.out.println("hasSharedDigit(15, 55); should return true: " + hasSharedDigit(15, 55));
         System.out.println("hasSharedDigit(20, 30); should return true: " + hasSharedDigit(20, 30));
+    }
+
+    private static void testIsPalindrome() {
+        System.out.println("707 is a palindrome: " + isPalindrome(707));
+        System.out.println("-1221 is a palindrome: " + isPalindrome(-1221));
+        System.out.println("11212 is NOT a palindrome: " + isPalindrome(11212));
+        System.out.println("1001 is a palindrome: " + isPalindrome(1001));
     }
 }
