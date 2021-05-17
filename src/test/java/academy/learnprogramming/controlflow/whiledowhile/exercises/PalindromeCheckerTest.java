@@ -36,6 +36,11 @@ public class PalindromeCheckerTest {
     }
 
     @Test
+    public void test_222_negative() {
+        assertTrue(isPalindrome(-222));
+    }
+
+    @Test
     public void test_11212() {
         assertFalse(isPalindrome(11212));
     }
