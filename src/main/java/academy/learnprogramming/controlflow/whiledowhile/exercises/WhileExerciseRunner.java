@@ -1,8 +1,9 @@
 package academy.learnprogramming.controlflow.whiledowhile.exercises;
 
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.EvenDigitSum.getEvenDigitSum;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.FirstLastDigitSum.sumFirstAndLastDigit;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.PalindromeChecker.isPalindrome;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.SharedDigit.hasSharedDigit;
-import static academy.learnprogramming.controlflow.whiledowhile.exercises.SumFirstAndLast.sumFirstAndLastDigit;
 
 /**
  * section 5 - main method for exercises on while & do while loops
@@ -17,6 +18,7 @@ public class WhileExerciseRunner {
         testHasSharedDigit();
         testIsPalindrome();
         testSumFirstAndLast();
+        testEvenDigitSum();
     }
 
     private static void testHasSharedDigit() {
@@ -35,5 +37,10 @@ public class WhileExerciseRunner {
 
     private static void testSumFirstAndLast() {
         System.out.println("sumFirstAndLastDigit(252) should return 4: " + sumFirstAndLastDigit(252));
+    }
+
+    private static void testEvenDigitSum() {
+        System.out.println("getEvenDigitSum(123456789) should be 20: " + getEvenDigitSum(123456789));
+        System.out.println("getEvenDigitSum(13579) should be 0: " + getEvenDigitSum(13579));
     }
 }
