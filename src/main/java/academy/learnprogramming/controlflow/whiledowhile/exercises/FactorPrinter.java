@@ -11,10 +11,9 @@ public class FactorPrinter {
 
     /**
      * Write a method named printFactors with one parameter of type int named number.
-     *
      * If number is < 1, the method should print "Invalid Value".
-     *
-     * The method should print all factors of the number. A factor of a number is an integer which divides that number wholly (i.e. without leaving a remainder).
+     * The method should print all factors of the number. A factor of a number is an integer which divides that number wholly
+     * (i.e. without leaving a remainder).
      *
      * For example, 3 is a factor of 6 because 3 fully divides 6 without leaving a remainder. In other words 6 / 3 = 2.
      *
@@ -40,4 +39,18 @@ public class FactorPrinter {
      * NOTE: The method printFactors should be defined as public static like we have been doing so far in the course.
      * NOTE: Do not add a main method to the solution code.
      */
+    public static void printFactors(int number) {
+        if (number < 1) {
+            System.out.println("Invalid Value");
+        } else {
+            // using a while because this is in the while loop section
+            int counter = 1;
+            while (counter <= number) {
+                if (number % counter == 0) {
+                    System.out.println(counter);
+                }
+                counter++;
+            }
+        }
+    }
 }
