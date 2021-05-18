@@ -2,6 +2,7 @@ package academy.learnprogramming.controlflow.whiledowhile.exercises;
 
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.EvenDigitSum.getEvenDigitSum;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.FirstLastDigitSum.sumFirstAndLastDigit;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.GreatestCommonDivisor.getGreatestCommonDivisor;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.PalindromeChecker.isPalindrome;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.SharedDigit.hasSharedDigit;
 
@@ -19,6 +20,7 @@ public class WhileExerciseRunner {
         testIsPalindrome();
         testSumFirstAndLast();
         testEvenDigitSum();
+        testGreatestCommonDivisor();
     }
 
     private static void testHasSharedDigit() {
@@ -42,5 +44,10 @@ public class WhileExerciseRunner {
     private static void testEvenDigitSum() {
         System.out.println("getEvenDigitSum(123456789) should be 20: " + getEvenDigitSum(123456789));
         System.out.println("getEvenDigitSum(13579) should be 0: " + getEvenDigitSum(13579));
+    }
+
+    private static void testGreatestCommonDivisor() {
+        System.out.println("getGreatestCommonDivisor(25, 15) should be 5: " + getGreatestCommonDivisor(25, 15));
+        System.out.println("getGreatestCommonDivisor(81, 153) should be 9: " + getGreatestCommonDivisor(81, 153));
     }
 }
