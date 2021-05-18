@@ -10,9 +10,16 @@ package academy.learnprogramming.stringparsing;
 public class Main {
 
     public static void main(String[] args) {
-        String numberAsString = "2018";
+        String numberAsString = "2018.125";
         System.out.println("numberAsString = " + numberAsString);
-        int number = Integer.parseInt(numberAsString); // wrapper class for primitive
+        // int number = Integer.parseInt(numberAsString); // wrapper class for primitive
+        double number = Double.parseDouble(numberAsString); // wrapper class for primitive
+        System.out.println("number = " + number);
+
+        numberAsString += 1; // concatenation
+        number += 1;
+
+        System.out.println("numberAsString = " + numberAsString);
         System.out.println("number = " + number);
     }
 }
