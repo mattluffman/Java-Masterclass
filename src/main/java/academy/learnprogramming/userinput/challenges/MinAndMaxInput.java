@@ -14,19 +14,19 @@ public class MinAndMaxInput {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int min = 0;
-        int max = 0;
-        boolean firstIteration = true;
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        // boolean firstIteration = true;
         while (true) {
             System.out.println("Enter number:");
             if (scanner.hasNextInt()) {
                 int number = scanner.nextInt();
 
-                if (firstIteration) {
+                /*if (firstIteration) {
                     min = number;
                     max = number;
                     firstIteration = false;
-                }
+                }*/
 
                 if (number < min) {
                     min = number;
@@ -38,7 +38,7 @@ public class MinAndMaxInput {
             } else {
                 break;
             }
-            scanner.nextLine();
+            scanner.nextLine(); // handle input
         }
 
         System.out.println("Your min number was " + min + " and your max was " + max);
