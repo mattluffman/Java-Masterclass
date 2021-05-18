@@ -3,6 +3,7 @@ package academy.learnprogramming.controlflow.whiledowhile.exercises;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.EvenDigitSum.getEvenDigitSum;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.FirstLastDigitSum.sumFirstAndLastDigit;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.GreatestCommonDivisor.getGreatestCommonDivisor;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.LastDigitChecker.hasSameLastDigit;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.PalindromeChecker.isPalindrome;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.SharedDigit.hasSharedDigit;
 
@@ -21,6 +22,7 @@ public class WhileExerciseRunner {
         testSumFirstAndLast();
         testEvenDigitSum();
         testGreatestCommonDivisor();
+        testLastDigit();
     }
 
     private static void testHasSharedDigit() {
@@ -49,5 +51,10 @@ public class WhileExerciseRunner {
     private static void testGreatestCommonDivisor() {
         System.out.println("getGreatestCommonDivisor(25, 15) should be 5: " + getGreatestCommonDivisor(25, 15));
         System.out.println("getGreatestCommonDivisor(81, 153) should be 9: " + getGreatestCommonDivisor(81, 153));
+    }
+
+    private static void testLastDigit() {
+        System.out.println("hasSameLastDigit(9, 99, 999); should be invalid & false: " + hasSameLastDigit(9, 99, 999));
+        System.out.println("hasSameLastDigit(23, 32, 42); should be true: " + hasSameLastDigit(23, 32, 42));
     }
 }
