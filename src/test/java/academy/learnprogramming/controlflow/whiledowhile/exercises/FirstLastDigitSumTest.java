@@ -2,7 +2,7 @@ package academy.learnprogramming.controlflow.whiledowhile.exercises;
 
 import org.junit.Test;
 
-import static academy.learnprogramming.controlflow.whiledowhile.exercises.SumFirstAndLast.sumFirstAndLastDigit;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.FirstLastDigitSum.sumFirstAndLastDigit;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
  * Date: 5/13/2021
  * Time: 11:07 PM
  */
-public class SumFirstAndLastTest {
+public class FirstLastDigitSumTest {
 
     @Test
     public void test_negative() {

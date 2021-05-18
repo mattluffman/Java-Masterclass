@@ -7,7 +7,7 @@ package academy.learnprogramming.controlflow.whiledowhile.exercises;
  * Date: 5/13/2021
  * Time: 11:06 PM
  */
-public class SumFirstAndLast {
+public class FirstLastDigitSum {
 
     /**
      * Write a method named sumFirstAndLastDigit with one parameter of type int called number.
