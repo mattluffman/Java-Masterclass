@@ -10,7 +10,7 @@ import static academy.learnprogramming.controlflow.switchstatement.exercises.Num
  * Date: 4/28/2021
  * Time: 5:35 PM
  */
-public class ControlExerciseRunner {
+public class SwitchExerciseRunner {
 
     public static void main(String[] args) {
         testNumberInWord();
