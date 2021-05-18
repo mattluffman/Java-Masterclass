@@ -23,7 +23,11 @@ public class Main {
         // calculate age
         int age = 2021 - yearOfBirth;
 
-        System.out.println("Your name is " + name + ", and you are " + age + " years old");
+        if (age >= 0 && age <= 100) {
+            System.out.println("Your name is " + name + ", and you are " + age + " years old");
+        } else {
+            System.out.println("Invalid year of birth");
+        }
 
         // close for no future input, free up resources
         scanner.close();
