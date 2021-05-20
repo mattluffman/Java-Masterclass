@@ -57,4 +57,9 @@ public class NumberToWordsTest {
     public void getDigitCount_102580() {
         assertEquals(6, getDigitCount(102580));
     }
+
+    @Test
+    public void getDigitCount_10258() {
+        assertEquals(5, getDigitCount(10258));
+    }
 }

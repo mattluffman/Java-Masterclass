@@ -74,11 +74,63 @@ public class NumberToWords {
      * NOTE: Do not add a main method to the solution code.
      */
 
+    // TODO: refactor this to have another method return the value so you can more easily unit test that.
     public static void numberToWords(int number) {
         if (number < 0) {
             System.out.println("Invalid Value");
         } else {
+            StringBuilder output = new StringBuilder();
+            int reverse = reverse(number);
+            final int digits = getDigitCount(number);
+            int digitCount = 0;
+            while (reverse > 0) {
+                int lastDigit = reverse % 10;
+                switch (lastDigit) {
+                    case 0:
+                        output.append("Zero ");
+                        break;
+                    case 1:
+                        output.append("One ");
+                        break;
+                    case 2:
+                        output.append("Two ");
+                        break;
+                    case 3:
+                        output.append("Three ");
+                        break;
+                    case 4:
+                        output.append("Four ");
+                        break;
+                    case 5:
+                        output.append("Five ");
+                        break;
+                    case 6:
+                        output.append("Six ");
+                        break;
+                    case 7:
+                        output.append("Seven ");
+                        break;
+                    case 8:
+                        output.append("Eight ");
+                        break;
+                    case 9:
+                        output.append("Nine ");
+                        break;
+                    default:
+                        throw new IllegalArgumentException("We shouldn't be here");
+                }
 
+                ++digitCount;
+                reverse /= 10;
+            }
+
+            if (digitCount < digits) {
+                for (int i = digitCount; i < digits; i++) {
+                    output.append("Zero ");
+                }
+            }
+
+            System.out.println(output);
         }
     }
 
@@ -87,14 +139,13 @@ public class NumberToWords {
         if (number < 0) {
             return -1;
         } else {
-            int count = 1;
+            int count = 0;
             int copy = number;
-            while (copy > 0) {
+            do {
                 count++;
                 //drop last digit
                 copy /= 10;
-                System.out.println(count + " : " + copy);
-            }
+            } while (copy > 0);
             return count;
         }
     }
