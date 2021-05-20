@@ -44,4 +44,9 @@ public class PalindromeCheckerTest {
     public void test_11212() {
         assertFalse(isPalindrome(11212));
     }
+
+    @Test
+    public void test_100() {
+        assertFalse(isPalindrome(100));
+    }
 }

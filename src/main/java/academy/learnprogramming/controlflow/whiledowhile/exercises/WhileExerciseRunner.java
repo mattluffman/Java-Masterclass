@@ -5,6 +5,8 @@ import static academy.learnprogramming.controlflow.whiledowhile.exercises.Factor
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.FirstLastDigitSum.sumFirstAndLastDigit;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.GreatestCommonDivisor.getGreatestCommonDivisor;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.LastDigitChecker.hasSameLastDigit;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.NumberToWords.getDigitCount;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.NumberToWords.reverse;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.PalindromeChecker.isPalindrome;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.PerfectNumber.isPerfectNumber;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.SharedDigit.hasSharedDigit;
@@ -27,6 +29,7 @@ public class WhileExerciseRunner {
         testLastDigit();
         testPrintFactors();
         testPerfectNumber();
+        testNumberToWords();
     }
 
     private static void testHasSharedDigit() {
@@ -82,5 +85,12 @@ public class WhileExerciseRunner {
         System.out.println(isPerfectNumber(5));
         System.out.println("isPerfectNumber(-1); should return false since the number is < 1");
         System.out.println(isPerfectNumber(-1));
+    }
+
+    private static void testNumberToWords() {
+        System.out.println("reverse of 2244 should be 4422: " + reverse(2244));
+        System.out.println("Long.reverse could do this for us: " + Long.reverse(2244) + ". I guess not :-/");
+        System.out.println("number of digits in 10258 should be 5: " + getDigitCount(10258));
+        System.out.println("number of digits in 102580 should be 6: " + getDigitCount(10258));
     }
 }
