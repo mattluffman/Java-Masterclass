@@ -21,11 +21,25 @@ public class ClassChallengeRunner {
         ba.deposit(-30);
         System.out.println(ba.getBalance());
 
-        System.out.print("Withrdrawing 23.2 for new balance of 100: ");
+        System.out.print("Withdrawing 23.2 for new balance of 100: ");
         ba.withdrawal(23.2);
         System.out.println(ba.getBalance());
         System.out.print("Can't withdraw 200 from 100: ");
         ba.withdrawal(200.00);
         System.out.println(ba.getBalance());
+
+        System.out.println("Instructor test");
+        BankAccount bobsAccount = new BankAccount();
+        bobsAccount.setAccountNumber(12345);
+        bobsAccount.setBalance(0.0);
+        bobsAccount.setEmail("myemail@bob.com");
+        bobsAccount.setPhone("(087) 123-4567");
+        bobsAccount.withdrawal(100.0);
+
+        bobsAccount.deposit(50.0);
+        bobsAccount.withdrawal(100.0);
+
+        bobsAccount.deposit(51.0);
+        bobsAccount.withdrawal(100.0);
     }
 }

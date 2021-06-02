@@ -67,11 +67,9 @@ public class BankAccount {
     public void withdrawal(double amount) {
         if (this.balance - amount >= 0) {
             this.balance -= amount;
-            System.out.println("Subtracting " + amount + ". New balance: " + this.balance);
+            System.out.println("Withdrawing " + amount + ". New balance: " + this.balance);
         } else {
-            System.out.println("Insufficient funds");
+            System.out.println("Insufficient funds. Only " + this.balance + " available.");
         }
     }
-
-
 }
