@@ -29,11 +29,9 @@ public class ClassChallengeRunner {
         System.out.println(ba.getBalance());
 
         System.out.println("Instructor test");
-        BankAccount bobsAccount = new BankAccount();
-        bobsAccount.setAccountNumber(12345);
-        bobsAccount.setBalance(0.0);
-        bobsAccount.setEmail("myemail@bob.com");
-        bobsAccount.setPhone("(087) 123-4567");
+        BankAccount bobsAccount = new BankAccount(12345, 0.0, "Bob Brown", "myemail@bob.com", "(087) 123-4567");
+        System.out.println(bobsAccount.getAccountNumber());
+        System.out.println(bobsAccount.getBalance());
         bobsAccount.withdrawal(100.0);
 
         bobsAccount.deposit(50.0);
