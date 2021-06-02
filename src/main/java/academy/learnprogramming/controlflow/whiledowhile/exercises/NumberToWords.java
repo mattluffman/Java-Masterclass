@@ -125,6 +125,7 @@ public class NumberToWords {
             }
 
             if (digitCount < digits) {
+                // TODO: look into String.repeat() option suggested by IDE
                 for (int i = digitCount; i < digits; i++) {
                     output.append("Zero ");
                 }
@@ -182,4 +183,221 @@ public class NumberToWords {
 
         return negative ? -reverse : reverse;
     }
+
+    //TODO: have a look at the solutions from the TA Eddie in the Q/a section
+    /*
+    Definitely challenging and requiring everything we've learned (switch, for loop, while loop, do while loop).
+
+I'm providing two solutions: a) manipulation of numbers and b) manipulation of strings.  Then I add a bonus explanation of the design logic that make the code more concise by printing the extra "ZERO" with the existing switch case statements instead of adding extra if conditions.
+
+a) Solution by manipulating numbers:
+
+Although the instruction provided the hint "to get the number of zeroes, check the difference between the digit count from the original number and the reversed number", I decided to use the existing switch/case to print out the extra "ZERO" by looping and using the digit count from the original number as the for loop condition.  This makes the code much more concise without the need for additional code to handle the extra zeros.
+
+public class NumberToWords {
+    public static void numberToWords(int number){
+        if(number<0) System.out.print("Invalid Value");
+        int count = getDigitCount(number);
+        number = reverse(number);
+        for(int i=0; i<count; i++){
+                int digit = number%10;
+                switch(digit){
+                case 0:
+                    System.out.print("Zero "); break;
+                case 1:
+                    System.out.print("One "); break;
+                case 2:
+                    System.out.print("Two "); break;
+                case 3:
+                    System.out.print("Three "); break;
+                case 4:
+                    System.out.print("Four "); break;
+                case 5:
+                    System.out.print("Five "); break;
+                case 6:
+                    System.out.print("Six "); break;
+                case 7:
+                    System.out.print("Seven "); break;
+                case 8:
+                    System.out.print("Eight "); break;
+                case 9:
+                    System.out.print("Nine "); break;
+                default: break;
+                }
+                number /= 10;
+        }
+    }
+
+    public static int reverse(int number) {
+        int reverse = 0;
+        int digit = 0;
+        while(number!=0) {
+            digit = number%10;
+            reverse = (reverse*10) + digit;
+            number /= 10;
+        }
+        return reverse;
+    }
+
+    public static int getDigitCount(int number){
+        if (number<0) return -1;
+        int count = 0;
+        do {
+            count++;
+            number /= 10;
+        } while (number>0);
+        return count;
+    }
+}
+
+
+b) Alternative solution by manipulating strings:
+
+To make the code a bit more concise and easier to get "count" and "reverse", we can manipulate strings. For getDigitCount(), we can convert number to a string and use the String's built-in method of .length() to get the count.
+
+public static int getDigitCount(int number){
+    if (number<0) {
+        return -1;
+    }
+
+    String numberStr = Integer.toString(number);
+    return numberStr.length();
+}
+This can be simplified using a ternary operator to perform the validation as well as the return statement.
+
+    public static int getDigitCount(int number){
+        return (number<0) ? -1 : Integer.toString(number).length();
+    }
+To reverse the number, we can also use String and StringBuilder.  Unfortunately, the String class does not have the built-in function of .reverse(), but StringBuilder does.
+
+    public static int reverse(int number){
+        int num = (number<0) ? number*-1 : number; // if number is negative, use ternary to make number positive
+
+        String forwardStr = Integer.toString(num); // convert num to string
+        StringBuilder forwardSB = new StringBuilder(forwardStr); // use helper to build string
+        String reverseStr = forwardSB.reverse().toString(); // use built-in function to reverse string, use .toString to convert from StringBuilder to String
+        int reverse = Integer.parseInt(reverseStr); // convert string back to number using .parseInt
+
+        if(number<0) reverse *=-1; // if original number was negative, convert the reverse number back to a negative number
+        return reverse;
+    }
+This can be simplified to:
+
+    public static int reverse(int number){
+        int num = (number<0) ? number*-1 : number;
+
+        StringBuilder forwardSB = new StringBuilder(Integer.toString(num));
+        int reverse = Integer.parseInt(forwardSB.reverse().toString());
+
+        return (number<0) ? reverse*-1 : reverse;
+    }
+Taken all together, here is the alternative solution using Strings/StringBuilder:
+
+public class NumberToWords {
+    public static void numberToWords(int number){
+        if(number<0) System.out.print("Invalid Value");
+        int count = getDigitCount(number);
+        number = reverse(number);
+        for(int i=0; i<count; i++){
+                int digit = number%10;
+                switch(digit){
+                case 0:
+                    System.out.print("Zero "); break;
+                case 1:
+                    System.out.print("One "); break;
+                case 2:
+                    System.out.print("Two "); break;
+                case 3:
+                    System.out.print("Three "); break;
+                case 4:
+                    System.out.print("Four "); break;
+                case 5:
+                    System.out.print("Five "); break;
+                case 6:
+                    System.out.print("Six "); break;
+                case 7:
+                    System.out.print("Seven "); break;
+                case 8:
+                    System.out.print("Eight "); break;
+                case 9:
+                    System.out.print("Nine "); break;
+                default: break;
+                }
+                number /= 10;
+        }
+    }
+
+    public static int reverse(int number){
+        int num = (number<0) ? number*-1 : number;
+        StringBuilder forwardSB = new StringBuilder(Integer.toString(num));
+        int reverse = Integer.parseInt(forwardSB.reverse().toString());
+        return (number<0) ? reverse*-1 : reverse;
+    }
+
+    public static int getDigitCount(int number){
+        return (number<0) ? -1 : Integer.toString(number).length();
+    }
+}
+
+
+Explanation of Design Logic to Print Extra "ZERO":
+
+In my above solutions, I kept the code concise by using the existing switch case statements to print the extra "ZERO" instead of adding extra lines of code and if statements to handle printing the extra "ZERO".  Although the instruction hints "to get the number of zeroes, check the difference between the digit count from the original number and the reversed number", you can simply print the extra "ZERO" by using digit count of the original number (i.e. the full digit count) to print reverse since reverse eventually becomes 0 after all the reverse digits have been printed and it will just keep printing "ZERO" until count = 0.
+
+
+
+Let's follow the steps with a visual example:
+
+number = 12300 and count = 5.
+
+reverse = 321 and we don't want to worry about the reverse count.
+
+
+
+So count = 5 and that means we want to loop 5 times. Let's do each iteration of the loop.
+
+Loop #1:
+
+reverse = 321 and we print reverse%10 = 1 (print "ONE")
+
+then we chop off the least significant digit so now reverse = 32.
+
+we also decrement count = 4.
+
+Loop #2:
+
+reverse = 32 and we print reverse%10 = 2 (print "TWO")
+
+then we chop off the least significant digit so now reverse = 3.
+
+we also decrement count = 3.
+
+Loop #3:
+
+reverse = 3 and we print reverse%10 = 3 (print "THREE")
+
+then we chop off the least significant digit so now reverse = 0...this is the key point!
+
+we also decrement count = 2.
+
+Loop #4:
+
+reverse = 0 and we print reverse%10 = 0 (print "ZERO")
+
+then we chop off the least significant digit so it remains reverse = 0.
+
+we also decrement count = 1.
+
+Loop #5:
+
+reverse = 0 and we print reverse%10 = 0 (print "ZERO")
+
+then we chop off the least significant digit so it remains reverse = 0...
+
+but count = 0 so we stop the loop.
+
+
+
+Hope this posting is helpful in your learning.  Cheers!
+     */
 }

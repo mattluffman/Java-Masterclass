@@ -3,6 +3,7 @@ package academy.learnprogramming.controlflow.whiledowhile.exercises;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.EvenDigitSum.getEvenDigitSum;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.FactorPrinter.printFactors;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.FirstLastDigitSum.sumFirstAndLastDigit;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.FlourPacker.canPack;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.GreatestCommonDivisor.getGreatestCommonDivisor;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.LastDigitChecker.hasSameLastDigit;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.NumberToWords.getDigitCount;
@@ -31,6 +32,7 @@ public class WhileExerciseRunner {
         testPrintFactors();
         testPerfectNumber();
         testNumberToWords();
+        testFlourPacker();
     }
 
     private static void testHasSharedDigit() {
@@ -94,9 +96,16 @@ public class WhileExerciseRunner {
         System.out.println("number of digits in 10258 should be 5: " + getDigitCount(10258));
         System.out.println("number of digits in 102580 should be 6: " + getDigitCount(102580));
         System.out.println("number of digits in 102581 should be 6: " + getDigitCount(102581));
+        System.out.print("102580: ");
+        numberToWords(102580);
         System.out.print("102581: ");
         numberToWords(102581);
         System.out.print("100: ");
         numberToWords(100);
+    }
+
+    private static void testFlourPacker() {
+        System.out.println("canPack(1, 1, 7): " + canPack(1, 1, 7));
+        System.out.println("canPack(1, 1, 6): " + canPack(1, 1, 6));
     }
 }
