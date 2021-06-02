@@ -8,7 +8,7 @@ package academy.learnprogramming.classes.exercises;
 public class ClassExerciseRunner {
 
     public static void main(String[] args) {
-        // testSimpleCalculator();
+        testSimpleCalculator();
         testPerson();
     }
 
