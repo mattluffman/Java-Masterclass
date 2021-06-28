@@ -47,21 +47,15 @@ public class FlourPacker {
             return false;
         } else {
             int total = 0;
-            while (total < goal) {
-                if (total + 5 > goal) {
-                    break;
+            for (int i = 0; i <= bigCount; ++i) {
+                for (int j = 0; j <= smallCount; ++j) {
+                    if (total + j == goal) {
+                        return true;
+                    }
                 }
                 total += 5;
             }
-
-            while (total < goal) {
-                if (total + 1 > goal) {
-                    break;
-                }
-                total++;
-            }
-
-            return total == goal;
+            return false;
         }
     }
 }

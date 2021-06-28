@@ -37,4 +37,19 @@ public class FlourPackerTest {
     public void test5() {
         assertFalse(canPack(-3, 2, 12));
     }
+
+    @Test
+    public void test6() {
+        assertTrue(canPack(14, 3, 12));
+    }
+
+    @Test
+    public void test7() {
+        assertFalse(canPack(14, 3, 14));
+    }
+
+    @Test
+    public void test8() {
+        assertTrue(canPack(14, 3, 13));
+    }
 }
