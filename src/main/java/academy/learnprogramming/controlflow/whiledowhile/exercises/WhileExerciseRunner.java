@@ -5,6 +5,7 @@ import static academy.learnprogramming.controlflow.whiledowhile.exercises.Factor
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.FirstLastDigitSum.sumFirstAndLastDigit;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.FlourPacker.canPack;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.GreatestCommonDivisor.getGreatestCommonDivisor;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.LargestPrime.getLargestPrime;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.LastDigitChecker.hasSameLastDigit;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.NumberToWords.getDigitCount;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.NumberToWords.numberToWords;
@@ -33,6 +34,7 @@ public class WhileExerciseRunner {
         testPerfectNumber();
         testNumberToWords();
         testFlourPacker();
+        testLargestPrime();
     }
 
     private static void testHasSharedDigit() {
@@ -107,5 +109,12 @@ public class WhileExerciseRunner {
     private static void testFlourPacker() {
         System.out.println("canPack(1, 1, 7): " + canPack(1, 1, 7));
         System.out.println("canPack(1, 1, 6): " + canPack(1, 1, 6));
+    }
+
+    private static void testLargestPrime() {
+        System.out.println("Largest prime is 31 for 217: " + getLargestPrime(217));
+        System.out.println("Largest prime for -1 & 0 are -1: ");
+        System.out.println(getLargestPrime(0));
+        System.out.println(getLargestPrime(-1));
     }
 }
