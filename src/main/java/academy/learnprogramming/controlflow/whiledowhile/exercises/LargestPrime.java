@@ -55,4 +55,17 @@ public class LargestPrime {
 
         return largestPrime;
     }
+
+    //TODO look at this solution from Ariel: https://www.udemy.com/course/java-the-complete-java-developer-course/learn/quiz/4448802#questions/8842562
+    /*
+    public class LargestPrime {
+    public static int getLargestPrime (int number) {
+        if (number<2) return -1;
+        for (int i=number/2; i>1; i--) {
+            if(number%i==0) number=i;
+        }
+        return number;
+    }
+}
+     */
 }
