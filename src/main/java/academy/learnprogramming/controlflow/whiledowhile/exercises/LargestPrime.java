@@ -37,8 +37,16 @@ public class LargestPrime {
                 // if is a factor
                 if (number % i == 0) {
                     System.out.println(i + " is a factor");
+                    boolean isIPrime = true;
                     // is prime
-                    if (isPrime(i)) {
+                    for (int j = 2; j <= Math.sqrt(i); ++j) {
+                        if (i % j == 0) {
+                            isIPrime = false;
+                            break;
+                        }
+                    }
+
+                    if (isIPrime) {
                         largestPrime = i;
                     }
                 }
@@ -46,19 +54,5 @@ public class LargestPrime {
         }
 
         return largestPrime;
-    }
-
-    public static boolean isPrime(int n) {
-        if (n == 1) {
-            return false;
-        }
-
-        for (int i = 2; i <= (long) Math.sqrt(n); ++i) {
-            if (n % i == 0) {
-                return false;
-            }
-        }
-
-        return true;
     }
 }
