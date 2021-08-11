@@ -1,10 +1,17 @@
 package academy.learnprogramming.controlflow.whiledowhile.exercises;
 
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.EvenDigitSum.getEvenDigitSum;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.FactorPrinter.printFactors;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.FirstLastDigitSum.sumFirstAndLastDigit;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.FlourPacker.canPack;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.GreatestCommonDivisor.getGreatestCommonDivisor;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.LargestPrime.getLargestPrime;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.LastDigitChecker.hasSameLastDigit;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.NumberToWords.getDigitCount;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.NumberToWords.numberToWords;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.NumberToWords.reverse;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.PalindromeChecker.isPalindrome;
+import static academy.learnprogramming.controlflow.whiledowhile.exercises.PerfectNumber.isPerfectNumber;
 import static academy.learnprogramming.controlflow.whiledowhile.exercises.SharedDigit.hasSharedDigit;
 
 /**
@@ -23,6 +30,11 @@ public class WhileExerciseRunner {
         testEvenDigitSum();
         testGreatestCommonDivisor();
         testLastDigit();
+        testPrintFactors();
+        testPerfectNumber();
+        testNumberToWords();
+        testFlourPacker();
+        testLargestPrime();
     }
 
     private static void testHasSharedDigit() {
@@ -56,5 +68,53 @@ public class WhileExerciseRunner {
     private static void testLastDigit() {
         System.out.println("hasSameLastDigit(9, 99, 999); should be invalid & false: " + hasSameLastDigit(9, 99, 999));
         System.out.println("hasSameLastDigit(23, 32, 42); should be true: " + hasSameLastDigit(23, 32, 42));
+    }
+
+    private static void testPrintFactors() {
+        System.out.print("printFactors - Invalid value: ");
+        printFactors(-1);
+        System.out.println("printFactors(6); → should print 1 2 3 6");
+        printFactors(6);
+        System.out.println("printFactors(32); → should print 1 2 4 8 16 32");
+        printFactors(32);
+        System.out.println("printFactors(10); → should print 1 2 5 10");
+        printFactors(10);
+    }
+
+    public static void testPerfectNumber() {
+        System.out.println("isPerfectNumber(6); should return true since its proper divisors are 1, 2, 3 and the sum is 1 + 2 + 3 = 6");
+        System.out.println(isPerfectNumber(6));
+        System.out.println("isPerfectNumber(28); should return true since its proper divisors are 1, 2, 4, 7, 14 and the sum is 1 + 2 + 4 + 7 + 14 = 28");
+        System.out.println(isPerfectNumber(28));
+        System.out.println("isPerfectNumber(5); should return false since its only proper divisor is 1 and the sum is 1 not 5");
+        System.out.println(isPerfectNumber(5));
+        System.out.println("isPerfectNumber(-1); should return false since the number is < 1");
+        System.out.println(isPerfectNumber(-1));
+    }
+
+    private static void testNumberToWords() {
+        System.out.println("reverse of 2244 should be 4422: " + reverse(2244));
+        System.out.println("Long.reverse could do this for us: " + Long.reverse(2244) + ". I guess not :-/");
+        System.out.println("number of digits in 10258 should be 5: " + getDigitCount(10258));
+        System.out.println("number of digits in 102580 should be 6: " + getDigitCount(102580));
+        System.out.println("number of digits in 102581 should be 6: " + getDigitCount(102581));
+        System.out.print("102580: ");
+        numberToWords(102580);
+        System.out.print("102581: ");
+        numberToWords(102581);
+        System.out.print("100: ");
+        numberToWords(100);
+    }
+
+    private static void testFlourPacker() {
+        System.out.println("canPack(1, 1, 7): " + canPack(1, 1, 7));
+        System.out.println("canPack(1, 1, 6): " + canPack(1, 1, 6));
+    }
+
+    private static void testLargestPrime() {
+        System.out.println("Largest prime is 31 for 217: " + getLargestPrime(217));
+        System.out.println("Largest prime for -1 & 0 are -1: ");
+        System.out.println(getLargestPrime(0));
+        System.out.println(getLargestPrime(-1));
     }
 }
