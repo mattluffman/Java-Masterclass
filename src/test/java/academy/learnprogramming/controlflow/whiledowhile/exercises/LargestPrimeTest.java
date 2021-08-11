@@ -36,4 +36,9 @@ public class LargestPrimeTest {
     public void test2_negative() {
         assertEquals(-1, getLargestPrime(-1));
     }
+
+    @Test
+    public void test_primeNumber() {
+        assertEquals(7, getLargestPrime(7));
+    }
 }

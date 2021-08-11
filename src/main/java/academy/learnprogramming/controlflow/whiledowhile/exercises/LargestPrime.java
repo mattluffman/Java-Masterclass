@@ -33,7 +33,7 @@ public class LargestPrime {
     public static int getLargestPrime(int number) {
         int largestPrime = -1;
         if (number >= 2) {
-            for (int i = 2; i <= (number / 2); ++i) {
+            for (int i = 2; i <= number; ++i) {
                 // if is a factor
                 if (number % i == 0) {
                     System.out.println(i + " is a factor");
