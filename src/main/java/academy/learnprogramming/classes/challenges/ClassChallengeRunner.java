@@ -39,5 +39,9 @@ public class ClassChallengeRunner {
 
         bobsAccount.deposit(51.0);
         bobsAccount.withdrawal(100.0);
+
+        // new constructor usaging
+        BankAccount timsAccount = new BankAccount("Tim", "tim@email.com", "12345");
+        System.out.println(timsAccount.getAccountNumber() + " name " + timsAccount.getCustomerName());
     }
 }
