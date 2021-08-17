@@ -9,6 +9,7 @@ public class ClassChallengeRunner {
 
     public static void main(String[] args) {
         testBankAccount();
+        testVipCustomer();
     }
 
     private static void testBankAccount() {
@@ -43,5 +44,16 @@ public class ClassChallengeRunner {
         // new constructor usaging
         BankAccount timsAccount = new BankAccount("Tim", "tim@email.com", "12345");
         System.out.println(timsAccount.getAccountNumber() + " name " + timsAccount.getCustomerName());
+    }
+
+    private static void testVipCustomer() {
+        VipCustomer matt = new VipCustomer();
+        System.out.println(matt);
+
+        VipCustomer tim = new VipCustomer("Tim", 2500);
+        System.out.println(tim);
+
+        VipCustomer bob = new VipCustomer("Bob", 5000, "bob@javamasterclass.com");
+        System.out.println(bob);
     }
 }
