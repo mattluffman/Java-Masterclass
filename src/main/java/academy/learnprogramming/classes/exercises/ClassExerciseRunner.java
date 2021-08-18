@@ -10,6 +10,7 @@ public class ClassExerciseRunner {
     public static void main(String[] args) {
         testSimpleCalculator();
         testPerson();
+        testWall();
     }
 
     /**
@@ -54,5 +55,23 @@ public class ClassExerciseRunner {
         System.out.println("teen= " + person.isTeen());
         person.setLastName("Smith");    // lastName is set to Smith
         System.out.println("fullName= " + person.getFullName());
+    }
+
+    /**
+     * → OUTPUT:
+     *
+     * area= 20.0
+     * width= 5.0
+     * height= 0.0
+     * area= 0.0
+     */
+    private static void testWall() {
+        Wall wall = new Wall(5, 4);
+        System.out.println("area= " + wall.getArea());
+
+        wall.setHeight(-1.5);
+        System.out.println("width= " + wall.getWidth());
+        System.out.println("height= " + wall.getHeight());
+        System.out.println("area= " + wall.getArea());
     }
 }
