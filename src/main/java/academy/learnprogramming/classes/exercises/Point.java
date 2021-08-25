@@ -62,8 +62,6 @@ public class Point {
 
     private int x;
     private int y;
-    private static final Point ZERO = new Point();
-
 
     public Point() {
         this(0, 0);
@@ -118,6 +116,7 @@ public class Point {
     }
 
     public double distance() {
-        return this.distance(ZERO.getX(), ZERO.getY());
+        Point zero = new Point();
+        return this.distance(zero.getX(), zero.getY());
     }
 }
