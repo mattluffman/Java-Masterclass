@@ -1,5 +1,9 @@
 package academy.learnprogramming.classes.exercises;
 
+import academy.learnprogramming.classes.exercises.carpetcostcalculator.Calculator;
+import academy.learnprogramming.classes.exercises.carpetcostcalculator.Carpet;
+import academy.learnprogramming.classes.exercises.carpetcostcalculator.Floor;
+
 /**
  * @author Matt Luffman
  * Date: 5/28/2021
@@ -15,6 +19,8 @@ public class ClassExerciseRunner {
         testWall();
         System.out.println();
         testPoint();
+        System.out.println();
+        testCarpetCalculator();
     }
 
     /**
@@ -95,5 +101,22 @@ public class ClassExerciseRunner {
         System.out.println("distance(2,2)= " + first.distance(2, 2));
         Point point = new Point();
         System.out.println("distance()= " + point.distance());
+    }
+
+    /**
+     * → OUTPUT
+     *
+     * total= 38.5
+     * total= 36.45
+     */
+    private static void testCarpetCalculator() {
+        Carpet carpet = new Carpet(3.5);
+        Floor floor = new Floor(2.75, 4.0);
+        Calculator calculator = new Calculator(floor, carpet);
+        System.out.println("total= " + calculator.getTotalCost());
+        carpet = new Carpet(1.5);
+        floor = new Floor(5.4, 4.5);
+        calculator = new Calculator(floor, carpet);
+        System.out.println("total= " + calculator.getTotalCost());
     }
 }
