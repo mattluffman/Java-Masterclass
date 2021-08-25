@@ -39,10 +39,9 @@ public class PointTest {
     @Test
     public void distance_noArgs() {
         final double expected = 18.027756;
-        final double actual = SEVENTEEN_SIX.distance();
 
         System.out.println(18.027756377319946 - 18.027756);
-        assertEquals(expected, actual, 0.000001);
+        assertEquals(expected, SEVENTEEN_SIX.distance(), 0.000001);
     }
 
     /**
@@ -52,9 +51,8 @@ public class PointTest {
     public void distance_oneArg() {
         Point p = new Point(-7, -4);
         final double expected = 31.575307;
-        final double actual = p.distance(TWENTYFOUR_TWO);
 
-        assertEquals(expected, actual, 0.000001);
+        assertEquals(expected, p.distance(TWENTYFOUR_TWO), 0.000001);
     }
 
     /**
@@ -63,8 +61,7 @@ public class PointTest {
     @Test
     public void distance_twoArgs() {
         final double expected = 31.016125;
-        final double actual = TWENTYFOUR_TWO.distance(13, -27);
 
-        assertEquals(expected, actual, 0.000001);
+        assertEquals(expected, TWENTYFOUR_TWO.distance(13, -27), 0.000001);
     }
 }
