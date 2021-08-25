@@ -1,11 +1,13 @@
 package academy.learnprogramming.testingdebugging;
 
+import org.junit.After;
+import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 /**
  * @author Matt Luffman
@@ -15,6 +17,12 @@ import static org.junit.Assert.fail;
 public class BankAccountTest {
 
     private BankAccount account;
+    private static int count;
+
+    @BeforeClass
+    public static void beforeClass() {
+        System.out.println("This executes before any test cases. Count = " + count++);
+    }
 
     @Before
     public void setup() {
@@ -41,12 +49,29 @@ public class BankAccountTest {
     }
 
     @Test
-    public void withdraw() {
-        fail("This test is yet to be implemented");
+    public void withdraw_branch() {
+        double balance = account.withdraw(600.00, true);
+        assertEquals(400.00, balance, 0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void withdraw_notBranch() {
+        double balance = account.withdraw(600.00, false);
+        assertEquals(400.00, balance, 0);
     }
 
     @Test
     public void isChecking_true() {
         assertTrue("account is NOT a checking account", account.isChecking());
+    }
+
+    @AfterClass
+    public static void afterClass() {
+        System.out.println("This executes after any test cases. Count = " + count++);
+    }
+
+    @After
+    public void teardown() {
+        System.out.println("Count = " + count++);
     }
 }

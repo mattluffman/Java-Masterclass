@@ -34,7 +34,7 @@ public class BankAccount {
     }
 
     /**
-     * @param amount
+     * @param amount $
      * @param branch branch argument is true if the customer is performing the transaction at a branch with a teller, false if they're performing it at an ATM
      */
     public double deposit(double amount, boolean branch) {
@@ -43,10 +43,14 @@ public class BankAccount {
     }
 
     /**
-     * @param amount
+     * @param amount $
      * @param branch branch argument is true if the customer is performing the transaction at a branch with a teller, false if they're performing it at an ATM
      */
     public double withdraw(double amount, boolean branch) {
+        if (amount > 500.00 && !branch) {
+            throw new IllegalArgumentException();
+        }
+
         balance -= amount;
         return balance;
     }
