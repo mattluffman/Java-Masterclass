@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 /**
  * @author Matt Luffman
@@ -56,8 +57,20 @@ public class BankAccountTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void withdraw_notBranch() {
-        double balance = account.withdraw(600.00, false);
-        assertEquals(400.00, balance, 0);
+        account.withdraw(600.00, false);
+        fail("Should have thrown llegalArgumentException");
+    }
+
+    /**
+     * old junit 3 version of the above test
+     */
+    @Test
+    public void withdraw_notBranch_junit3() {
+        try {
+            account.withdraw(600.00, false);
+            fail("Should have thrown llegalArgumentException");
+        } catch (IllegalArgumentException e) {
+        }
     }
 
     @Test
