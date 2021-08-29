@@ -73,11 +73,6 @@ public class DiagonalStar {
      * NOTE: Do not add a main method to the solution code.
      */
     public static void printSquareStar(int number) {
-        final String star = createSquareStar(number);
-        System.out.println(star);
-    }
-
-    public static String createSquareStar(int number) {
         String result;
         if (number < 5) {
             result = "Invalid Value";
@@ -104,6 +99,7 @@ public class DiagonalStar {
             result = sb.toString();
         }
 
-        return result;
+        final String star = result;
+        System.out.println(star);
     }
 }
