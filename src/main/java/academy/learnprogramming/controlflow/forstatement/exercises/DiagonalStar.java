@@ -72,7 +72,7 @@ public class DiagonalStar {
      * NOTE: The method printSquareStar should be defined as public static like we have been doing so far in the course.
      * NOTE: Do not add a main method to the solution code.
      */
-    public static void printSquareStar(int number) {
+    public static void printSquareStarSuggested(int number) {
         if (number < 5) {
             System.out.println("Invalid Value");
         } else {
@@ -96,5 +96,41 @@ public class DiagonalStar {
             }
             System.out.println();
         }
+    }
+
+
+    public static void printSquareStar(int number) {
+        final String star = createSquareStar(number);
+        System.out.println(star);
+    }
+
+    public static String createSquareStar(int number) {
+        String result;
+        if (number < 5) {
+            result = "Invalid Value";
+        } else {
+            StringBuilder sb = new StringBuilder();
+            for (int row = 0; row < number; row++) {
+                for (int column = 0; column < number; column++) {
+                    if (row == 0 || row == number - 1 ||       // In the first or last row
+                        column == 0 || column == number - 1 || // In the first or last column
+                        row == column ||                       // When the row number equals the column number
+                        column + 1 == (number - row)           // When the column number equals rowCount - currentRow + 1
+                    ) {
+                        sb.append("*");
+                    } else {
+                        sb.append(" ");
+                    }
+                }
+
+                // add line end except when we're done
+                if (row != number - 1) {
+                    sb.append("\n");
+                }
+            }
+            result = sb.toString();
+        }
+
+        return result;
     }
 }
