@@ -73,11 +73,9 @@ public class DiagonalStar {
      * NOTE: Do not add a main method to the solution code.
      */
     public static void printSquareStar(int number) {
-        String result;
         if (number < 5) {
-            result = "Invalid Value";
+            System.out.println("Invalid Value");
         } else {
-            StringBuilder sb = new StringBuilder();
             for (int row = 0; row < number; row++) {
                 for (int column = 0; column < number; column++) {
                     if (row == 0 || row == number - 1 ||       // In the first or last row
@@ -85,21 +83,18 @@ public class DiagonalStar {
                         row == column ||                       // When the row number equals the column number
                         column + 1 == (number - row)       // When the column number equals rowCount - currentRow + 1
                     ) {
-                        sb.append("*");
+                        System.out.print("*");
                     } else {
-                        sb.append(" ");
+                        System.out.print(" ");
                     }
                 }
 
                 // add line end except when we're done
                 if (row != number - 1) {
-                    sb.append("\n");
+                    System.out.println();
                 }
             }
-            result = sb.toString();
+            System.out.println();
         }
-
-        final String star = result;
-        System.out.println(star);
     }
 }
