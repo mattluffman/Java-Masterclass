@@ -11,6 +11,7 @@ public class ForExerciseRunner {
 
     public static void main(String[] args) {
         testSumOddRange();
+        testDiagonalStar();
     }
 
     private static void testSumOddRange() {
