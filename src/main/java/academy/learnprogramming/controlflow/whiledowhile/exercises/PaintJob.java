@@ -8,10 +8,14 @@ package academy.learnprogramming.controlflow.whiledowhile.exercises;
  * Time: 5:51 PM
  */
 public class PaintJob {
+
     /**
-     * Bob is a wall painter and he needs your help. You have to write a program that helps Bob calculate how many buckets of paint he needs to buy before going to work. Bob might also have some extra buckets at home. He also knows the area that he can cover with one bucket of paint.
+     * Bob is a wall painter and he needs your help.
+     * You have to write a program that helps Bob calculate how many buckets of paint he needs to buy before going to work.
+     * Bob might also have some extra buckets at home. He also knows the area that he can cover with one bucket of paint.
      *
-     * 1. Write a method named getBucketCount with 4 parameters. The first parameter should be named width of type double. This parameter represents the width of the wall.
+     * 1. Write a method named getBucketCount with 4 parameters. The first parameter should be named width of type double.
+     * This parameter represents the width of the wall.
      *
      * The second parameter should be named height of type double. This parameter represents the height of the wall.
      *
@@ -19,7 +23,8 @@ public class PaintJob {
      *
      * The fourth parameter should be named extraBuckets. This parameter represents the bucket count that Bob has at home.
      *
-     * The method needs to return a value of type int that represents the number of buckets that Bob needs to buy before going to work. To calculate the bucket count, refer to the notes below.
+     * The method needs to return a value of type int that represents the number of buckets that Bob needs to buy before going to work.
+     * To calculate the bucket count, refer to the notes below.
      *
      * If one of the parameters width, height or areaPerBucket is less or equal to 0 or if extraBuckets is less than 0, the method needs to return -1 to indicate an invalid value.
      *
@@ -76,4 +81,30 @@ public class PaintJob {
      * NOTE: All methods should be defined as public static like we have been doing so far in the course.
      * NOTE: Do not add the main method to the solution code.
      */
+
+    public static int getBucketCount(double width, double height, double areaPerBucket, int extraBuckets) {
+        if (width <= 0 || height <= 0 || areaPerBucket <= 0 || extraBuckets < 0) {
+            return -1;
+        } else {
+            final double area = width * height;
+            final double totalBuckets = area / areaPerBucket;
+            final double neededBuckets = totalBuckets - extraBuckets;
+            double roundedBuckets = Math.ceil(neededBuckets);
+            return (int) roundedBuckets;
+        }
+    }
+
+    public static int getBucketCount(double width, double height, double areaPerBucket) {
+        return getBucketCount(width, height, areaPerBucket, 0);
+    }
+
+    public static int getBucketCount(double area, double areaPerBucket) {
+        if (area <= 0 || areaPerBucket <= 0) {
+            return -1;
+        } else {
+            final double totalBuckets = area / areaPerBucket;
+            double roundedBuckets = Math.ceil(totalBuckets);
+            return (int) roundedBuckets;
+        }
+    }
 }
