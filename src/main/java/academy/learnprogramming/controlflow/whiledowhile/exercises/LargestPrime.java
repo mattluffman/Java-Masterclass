@@ -6,6 +6,8 @@ package academy.learnprogramming.controlflow.whiledowhile.exercises;
  * @author Matt Luffman
  * Date: 6/2/2021
  * Time: 6:13 PM
+ * @see <a href="https://www.programiz.com/java-programming/examples/factors-number"> Resource: Prime factors</a>
+ * @see <a href="https://www.geeksforgeeks.org/prime-numbers/"> Resource: Prime numbers</a>
  */
 public class LargestPrime {
 
