@@ -34,4 +34,25 @@ public class Dog extends Animal {
         chew();
         super.eat();
     }
+
+    public void walk() {
+        System.out.println("Dog.walk() called");
+        super.move(5); // better to not use super in case you add another class in the hierarchy
+    }
+
+    public void run() {
+        System.out.println("Dog.run() called");
+        move(10); // better to not use super in case you add another class in the hierarchy
+    }
+
+    @Override
+    public void move(int speed) {
+        System.out.println("Dog.move() called");
+        moveLegs(speed);
+        super.move(speed);
+    }
+
+    private void moveLegs(int speed) {
+        System.out.println("Dog.moveLegs() called");
+    }
 }
