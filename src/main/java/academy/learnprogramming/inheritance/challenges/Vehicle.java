@@ -10,9 +10,11 @@ package academy.learnprogramming.inheritance.challenges;
 public class Vehicle {
 
     private int speed;
+    private Direction direction;
 
     public Vehicle() {
         this.speed = 0;
+        this.direction = Direction.STRAIGHT;
     }
 
     public int getSpeed() {
@@ -35,9 +37,20 @@ public class Vehicle {
 
     public void turnRight() {
         System.out.println("Turning right");
+        this.steer(Direction.RIGHT);
     }
 
     public void turnLeft() {
         System.out.println("Turning left");
+        this.steer(Direction.LEFT);
+    }
+
+    public void steer(Direction direction) {
+        this.direction = direction;
+    }
+
+    public void move(int speed, Direction direction) {
+        this.setSpeed(speed);
+        this.steer(direction);
     }
 }

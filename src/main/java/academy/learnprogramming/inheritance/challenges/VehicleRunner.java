@@ -11,7 +11,7 @@ public class VehicleRunner {
 
     public static void main(String[] args) {
         Vehicle skateboard = new Vehicle();
-        skateboard.setSpeed(25);
+        skateboard.move(25, Direction.STRAIGHT);
         System.out.println("is skateboard moving: " + skateboard.isMoving());
         skateboard.turnLeft();
 
