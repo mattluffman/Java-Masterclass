@@ -20,5 +20,6 @@ public class Main {
 
         PC thePC = new PC(theCase, monitor, motherboard);
         thePC.powerUp();
+        thePC.openIntellij();
     }
 }

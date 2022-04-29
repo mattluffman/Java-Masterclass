@@ -27,4 +27,8 @@ public class PC {
     private void drawLogo() {
         monitor.drawPixelAt(1200, 50, "yellow");
     }
+
+    public void openIntellij() {
+        motherboard.loadProgram("Intellij Idea");
+    }
 }
