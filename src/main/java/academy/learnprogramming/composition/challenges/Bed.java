@@ -24,4 +24,20 @@ public class Bed {
                "size='" + size + '\'' +
                ", made=" + made;
     }
+
+    public void makeBed() {
+        if (!this.made) {
+            this.made = true;
+            System.out.println("Making the bed");
+        }
+    }
+
+    public void pullDownSheets() {
+        if (this.made) {
+            this.made = false;
+            System.out.println("Pulling down the sheets");
+        }
+    }
+
+
 }

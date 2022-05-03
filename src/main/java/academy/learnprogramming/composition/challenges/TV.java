@@ -12,11 +12,13 @@ public class TV {
     int size;
     String brand;
     String type;
+    boolean on;
 
     public TV(int size, String brand, String type) {
         this.size = size;
         this.brand = brand;
         this.type = type;
+        this.on = false;
         System.out.println(this);
     }
 
@@ -26,5 +28,19 @@ public class TV {
                "size=" + size +
                ", brand='" + brand + '\'' +
                ", type='" + type + '\'';
+    }
+
+    public void turnOn() {
+        if (!this.on) {
+            this.on = true;
+            System.out.println("Turning on the TV");
+        }
+    }
+
+    public void turnOff() {
+        if (this.on) {
+            this.on = false;
+            System.out.println("Turning off the TV");
+        }
     }
 }

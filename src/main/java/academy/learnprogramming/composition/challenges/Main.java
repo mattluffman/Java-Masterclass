@@ -21,7 +21,8 @@ public class Main {
     // like you saw in this video.
 
     /*
-    door, window, desk, lamp,
+    door, window, desk,
+    lamp,
     bed,
     tv,
     wall,
@@ -32,7 +33,7 @@ public class Main {
     /*
     plans: have one of the furniture items have a getter in room, & the others not
     that one will have a getter where you can call it's methods = I'm thinking lamp for this one, it will have a turnOn & turnOff methods
-    bed will have MakeBed method
+    bed will have MakeBed method, leave room method, turn off lamp & make bed, close window
     others will have no getter & a wrapper type method in the room class (like drawLogo())
      */
 
@@ -41,5 +42,11 @@ public class Main {
         TV tv = new TV(65, "Sony", "OLED");
         Bed bed = new Bed("Queen");
         Room room = new Room(10, 12, 10, FloorType.HARDWOOD, "light green", tv, bed);
+
+        // turn on tv, requirement 1 for using getter
+        room.getTv().turnOn();
+
+        // get in the bed (unmake it), requirement 2 for hiding the functionality & using a method
+        room.getInBed();
     }
 }
