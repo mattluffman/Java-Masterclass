@@ -15,11 +15,15 @@ public class Room {
     private TV tv;
     private Bed bed;
     private Lamp lamp;
+    private Window window;
+    private Door door;
 
     public Room(int length, int width, int height, FloorType floorType, String paint, TV tv, Bed bed) {
         this.floor = new Floor(length, width, floorType);
         this.ceiling = new Ceiling(length, width);
         this.lamp = new Lamp();
+        this.window = new Window();
+        this.door = new Door();
 
         // create walls
         this.walls = new Wall[4];
@@ -44,6 +48,9 @@ public class Room {
         this.lamp.turnOff();
         this.bed.makeBed();
         this.tv.turnOff();
+        this.window.close();
+        this.door.close();
+        System.out.println("You cats behave while I'm gone!!!");
     }
 
     public void getInBed() {
@@ -52,6 +59,11 @@ public class Room {
     }
 
     public void enterRoomAndOpenWindow() {
-        // this
+        this.door.open();
+        this.window.open();
+    }
+
+    public void illuminate() {
+        this.lamp.turnOn();
     }
 }

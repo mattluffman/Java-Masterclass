@@ -38,6 +38,4 @@ public class Bed {
             System.out.println("Pulling down the sheets");
         }
     }
-
-
 }

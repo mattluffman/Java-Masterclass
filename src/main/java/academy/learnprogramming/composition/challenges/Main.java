@@ -46,7 +46,14 @@ public class Main {
         // turn on tv, requirement 1 for using getter
         room.getTv().turnOn();
 
+        room.enterRoomAndOpenWindow();
+        room.illuminate();
+
         // get in the bed (unmake it), requirement 2 for hiding the functionality & using a method
         room.getInBed();
+
+        // leaving the house
+        System.out.println();
+        room.leaveHome();
     }
 }
