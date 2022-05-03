@@ -1,7 +1,7 @@
 package academy.learnprogramming.composition.exercises;
 
 /**
- * section 7, exercise 38
+ * section 7, exercise 37
  *
  * @author Matt Luffman
  * Date: 5/3/2022
@@ -32,6 +32,6 @@ public class Lamp {
     }
 
     public void turnOn() {
-        System.out.println("Lamp is turned on");
+        System.out.println("Lamp --> Turning on");
     }
 }
