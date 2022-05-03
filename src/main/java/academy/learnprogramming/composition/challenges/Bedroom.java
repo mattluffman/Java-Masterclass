@@ -7,7 +7,7 @@ package academy.learnprogramming.composition.challenges;
  * Date: 4/29/2022
  * Time: 5:24 PM
  */
-public class Room {
+public class Bedroom {
 
     private Floor floor;
     private Ceiling ceiling;
@@ -18,7 +18,7 @@ public class Room {
     private Window window;
     private Door door;
 
-    public Room(int length, int width, int height, FloorType floorType, String paint, TV tv, Bed bed) {
+    public Bedroom(int length, int width, int height, FloorType floorType, String paint, TV tv, Bed bed) {
         this.floor = new Floor(length, width, floorType);
         this.ceiling = new Ceiling(length, width);
         this.lamp = new Lamp();

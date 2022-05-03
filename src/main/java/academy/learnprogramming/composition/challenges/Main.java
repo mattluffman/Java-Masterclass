@@ -41,19 +41,19 @@ public class Main {
 
         TV tv = new TV(65, "Sony", "OLED");
         Bed bed = new Bed("Queen");
-        Room room = new Room(10, 12, 10, FloorType.HARDWOOD, "light green", tv, bed);
+        Bedroom bedroom = new Bedroom(10, 12, 10, FloorType.HARDWOOD, "light green", tv, bed);
 
         // turn on tv, requirement 1 for using getter
-        room.getTv().turnOn();
+        bedroom.getTv().turnOn();
 
-        room.enterRoomAndOpenWindow();
-        room.illuminate();
+        bedroom.enterRoomAndOpenWindow();
+        bedroom.illuminate();
 
         // get in the bed (unmake it), requirement 2 for hiding the functionality & using a method
-        room.getInBed();
+        bedroom.getInBed();
 
         // leaving the house
         System.out.println();
-        room.leaveHome();
+        bedroom.leaveHome();
     }
 }
