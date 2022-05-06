@@ -58,9 +58,8 @@ public class SortedArray {
 
     public static int[] getIntegers(int arraySize) {
         int[] numbers = new int[arraySize];
-        Scanner scanner = new Scanner(System.in);
-        int numbersCollected = 0;
-        try {
+        try (Scanner scanner = new Scanner(System.in)) {
+            int numbersCollected = 0;
             while (true) {
                 if (scanner.hasNextInt()) {
                     int input = scanner.nextInt();
@@ -74,14 +73,14 @@ public class SortedArray {
                 }
                 scanner.nextLine();
             }
-        } finally {
-            scanner.close();
         }
         return numbers;
     }
 
     public static int[] sortIntegers(int[] array) {
-        return null;
+        int[] sorted = new int[array.length];
+
+        return sorted;
     }
 
     public static void printArray(int[] array) {
