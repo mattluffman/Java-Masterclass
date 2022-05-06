@@ -40,4 +40,11 @@ public class PrinterTest {
         printer.printPages(250);
         assertEquals(49, printer.getTonerLevel());
     }
+
+    @Test
+    public void testDuplex() {
+        Printer printer = new Printer(50, true);
+        printer.printPages(5);
+        assertEquals(3, printer.getTotalPagesPrinted());
+    }
 }

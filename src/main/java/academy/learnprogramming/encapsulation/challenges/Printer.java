@@ -58,8 +58,13 @@ public class Printer {
 
     public void printPages(int number) {
         if (number > 0 && this.tonerLevel > 0) {
-            System.out.println("Printing " + number + " pages.");
-            this.totalPagesPrinted += number;
+
+            int pagesToPrint = number;
+            if (this.isDuplex()) {
+                pagesToPrint = (number / 2) + (number % 2);
+            }
+            this.totalPagesPrinted += pagesToPrint;
+            System.out.println("Printing " + pagesToPrint + " pages.");
             // for simplicity sake,just decrease toner by one
             this.tonerLevel -= 1;
         }
