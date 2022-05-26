@@ -15,6 +15,10 @@ class Movie {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public String plot() {
         return "No plot here";
     }
@@ -33,7 +37,7 @@ class Jaws extends Movie {
 class IndependenceDay extends Movie {
 
     public IndependenceDay() {
-        super("IndependenceDay");
+        super("Independence Day");
     }
 
     @Override
@@ -69,10 +73,10 @@ class StarWars extends Movie {
 /**
  * no plot method here intentionally
  */
-class Forgetable extends Movie {
+class Forgettable extends Movie {
 
-    public Forgetable() {
-        super("Forgetable");
+    public Forgettable() {
+        super("Forgettable");
     }
 
     // no plot method
@@ -81,14 +85,10 @@ class Forgetable extends Movie {
 public class Main {
 
     public static void main(String[] args) {
-        Movie blade = new Movie("Blade");
-        System.out.println(blade.plot());
-
-        Jaws jaws = new Jaws();
-        System.out.println(jaws.plot());
-
-        IndependenceDay independenceDay = new IndependenceDay();
-        System.out.println(independenceDay.plot());
+        for (int i = 1; i < 11; i++) {
+            Movie movie = randomMovie();
+            System.out.printf("Movie #%s : %s\nPlot: %s%n%n", i, movie.getName(), movie.plot());
+        }
     }
 
 
@@ -105,7 +105,7 @@ public class Main {
             case 4:
                 return new StarWars();
             case 5:
-                return new Forgetable();
+                return new Forgettable();
         }
 
         return null;
