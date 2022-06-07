@@ -28,7 +28,8 @@ public class Main {
      * For the second class, DeluxeBurger, there are no additional member variables, and the constructor accepts no parameters. Instead, the constructor creates a deluxe burger with all the fixings and chips and a drink for a base price of $19.10. The constructor can be configured in any way, as
      * long as chips and drink are added for the total price just mentioned. In this class, the four(4) methods defined in the Hamburger class for including additional toppings must each be overridden so that a message is printed stating that no additional items can be added to a deluxe burger.
      *
-     * And for the third class, HealthyBurger, there will be four(4) additional member variables called healthyExtra1Name, healthyExtra1Price, healthyExtra2Name, and healthyExtra2Price. The names are type String and the prices are type double. The constructor for this class accepts two(2) parameters
+     * And for the third class, HealthyBurger, there will be four(4) additional member variables called healthyExtra1Name, healthyExtra1Price, healthyExtra2Name, and healthyExtra2Price.
+     * The names are type String and the prices are type double. The constructor for this class accepts two(2) parameters
      * for meat and price. Those are set in the constructor along with an appropriate name for the type of burger.
      *
      * Two methods, addHealthyAddition1 and addHealthyAddition2 should be created that each accept a name and price for the addition, allowing for up to two(2) addons to the basic healthy burger. And finally the itemizeHamburger method created in the Hamburger class should be overridden to generate
@@ -75,11 +76,10 @@ public class Main {
         hamburger.addHamburgerAddition3("Cheese", 1.13);
         System.out.println("Total Burger price is " + hamburger.itemizeHamburger());
 
-        /*HealthyBurger healthyBurger = new HealthyBurger("Bacon", 5.67);
+        HealthyBurger healthyBurger = new HealthyBurger("Bacon", 5.67);
         healthyBurger.addHamburgerAddition1("Egg", 5.43);
         healthyBurger.addHealthyAddition1("Lentils", 3.41);
         System.out.println("Total Healthy Burger price is  " + healthyBurger.itemizeHamburger());
-*/
 
         DeluxeBurger db = new DeluxeBurger();
         db.addHamburgerAddition3("Should not do this", 50.53);
