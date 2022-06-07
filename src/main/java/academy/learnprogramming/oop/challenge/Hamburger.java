@@ -7,17 +7,17 @@ package academy.learnprogramming.oop.challenge;
  */
 public class Hamburger {
 
+    public static final int BASE_ALLOWED_ADDITIONS = 4;
+
     private String breadType;
     private String meat;
     private double price;
     private String name;
-    private int allowedAdditions = 4;
     private int currentAdditions = 0;
     private Addition addition1;
     private Addition addition2;
     private Addition addition3;
     private Addition addition4;
-
     public Hamburger(String breadType, String meat, double price) {
         this.breadType = breadType;
         this.meat = meat;
@@ -37,36 +37,24 @@ public class Hamburger {
         this.name = name;
     }
 
-    public Addition getAddition1() {
-        return addition1;
+    public int getCurrentAdditions() {
+        return currentAdditions;
     }
 
-    public void setAddition1(Addition addition1) {
-        this.addition1 = addition1;
+    public Addition getAddition1() {
+        return addition1;
     }
 
     public Addition getAddition2() {
         return addition2;
     }
 
-    public void setAddition2(Addition addition2) {
-        this.addition2 = addition2;
-    }
-
     public Addition getAddition3() {
         return addition3;
     }
 
-    public void setAddition3(Addition addition3) {
-        this.addition3 = addition3;
-    }
-
     public Addition getAddition4() {
         return addition4;
-    }
-
-    public void setAddition4(Addition addition4) {
-        this.addition4 = addition4;
     }
     //</editor-fold>
 
@@ -78,7 +66,7 @@ public class Hamburger {
      */
     public boolean addAddition(Addition addition) {
         boolean additionAdded = false;
-        if (this.currentAdditions < this.allowedAdditions) {
+        if (this.currentAdditions < BASE_ALLOWED_ADDITIONS) {
             switch (currentAdditions) {
                 case 0:
                     addition1 = addition;
@@ -103,7 +91,7 @@ public class Hamburger {
     public double getFullPrice() {
         double fullPrice = this.getPrice();
 
-        // print & add prices for all additionals
+        // add prices for all additionals
         if (this.getAddition1() != null) {
             fullPrice += this.getAddition1().getPrice();
         }
@@ -121,7 +109,11 @@ public class Hamburger {
     }
 
     public void printFullPrice() {
-        System.out.println("Burger base price: " + this.getPrice());
+        if (this.getName() != null) {
+            System.out.println(this.getName() + " base price: " + this.getPrice());
+        } else {
+            System.out.println("Burger base price: " + this.getPrice());
+        }
 
         // print & add prices for all additionals
         if (this.getAddition1() != null) {

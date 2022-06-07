@@ -61,6 +61,17 @@ public class Main {
         burger.addAddition(onion);
         burger.addAddition(cheese);
         burger.printFullPrice();
+
+        Hamburger healthyBurger = new HealthyBurger("Brisket/Short Rib", 9);
+        healthyBurger.addAddition(lettuce);
+        healthyBurger.addAddition(tomato);
+        healthyBurger.addAddition(onion);
+        healthyBurger.addAddition(cheese);
+        Addition pickle = new Addition("Pickles", .10);
+        healthyBurger.addAddition(pickle);
+        Addition mustard = new Addition("Mustard", .25);
+        healthyBurger.addAddition(mustard);
+        healthyBurger.printFullPrice();
     }
 }
 
