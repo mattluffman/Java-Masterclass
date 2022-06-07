@@ -72,6 +72,10 @@ public class Main {
         Addition mustard = new Addition("Mustard", .25);
         healthyBurger.addAddition(mustard);
         healthyBurger.printFullPrice();
+
+        Hamburger deluxeBurger = new DeluxeBurger("Kings Hawaiian", "80/20 Ground Beef", 10);
+        deluxeBurger.addAddition(mustard);
+        deluxeBurger.printFullPrice();
     }
 }
 
