@@ -60,7 +60,7 @@ public class Main {
         burger.addAddition(tomato);
         burger.addAddition(onion);
         burger.addAddition(cheese);
-        burger.getFullPrice();
+        burger.printFullPrice();
     }
 }
 

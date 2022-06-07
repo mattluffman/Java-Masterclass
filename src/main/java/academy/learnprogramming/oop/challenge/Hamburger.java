@@ -101,28 +101,42 @@ public class Hamburger {
     }
 
     public double getFullPrice() {
-        System.out.println("Burger base price: " + this.getPrice());
         double fullPrice = this.getPrice();
 
         // print & add prices for all additionals
         if (this.getAddition1() != null) {
-            System.out.println(this.getAddition1());
             fullPrice += this.getAddition1().getPrice();
         }
         if (this.getAddition2() != null) {
-            System.out.println(this.getAddition2());
             fullPrice += this.getAddition2().getPrice();
         }
         if (this.getAddition3() != null) {
-            System.out.println(this.getAddition3());
             fullPrice += this.getAddition3().getPrice();
         }
         if (this.getAddition4() != null) {
-            System.out.println(this.getAddition4());
             fullPrice += this.getAddition4().getPrice();
         }
 
-        System.out.println("Full burger price: " + fullPrice);
         return fullPrice;
+    }
+
+    public void printFullPrice() {
+        System.out.println("Burger base price: " + this.getPrice());
+
+        // print & add prices for all additionals
+        if (this.getAddition1() != null) {
+            System.out.println(this.getAddition1());
+        }
+        if (this.getAddition2() != null) {
+            System.out.println(this.getAddition2());
+        }
+        if (this.getAddition3() != null) {
+            System.out.println(this.getAddition3());
+        }
+        if (this.getAddition4() != null) {
+            System.out.println(this.getAddition4());
+        }
+
+        System.out.println("Full burger price: " + this.getFullPrice());
     }
 }
