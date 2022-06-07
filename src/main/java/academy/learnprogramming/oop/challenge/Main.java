@@ -43,11 +43,24 @@ public class Main {
      * All 3 classes should have a method that can be called anytime to show the base price of the hamburger
      * plus all additionals, each showing the addition name, and addition price, and a grand/final total for the
      * burger (base price + all additions)
+     *
      * For the two additional classes this may require you to be looking at the base class for pricing and then
      * adding totals to final price.
      */
     public static void main(String[] args) {
         // variable for allowed additions, set number in constructor
         // addition will be it's own class with a name & price (construction)
+        Addition lettuce = new Addition("Lettuce", .25);
+        Addition tomato = new Addition("Tomato", .35);
+        Addition onion = new Addition("Onion", .15);
+        Addition cheese = new Addition("Cheese", .75);
+        // System.out.println(cheese);
+        Hamburger burger = new Hamburger("Brioche", "73/27 Ground Beef", 6.75);
+        burger.addAddition(lettuce);
+        burger.addAddition(tomato);
+        burger.addAddition(onion);
+        burger.addAddition(cheese);
+        burger.getFullPrice();
     }
 }
+
