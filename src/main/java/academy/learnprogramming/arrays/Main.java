@@ -28,11 +28,12 @@ public class Main {
             myIntArray3[i] = i * 10;
         }
 
-        for (int i = 0; i < myIntArray3.length; ++i) {
-            System.out.println("Element " + i + ", value is " + myIntArray3[i]);
-        }
+        printArray(myIntArray3);
+    }
 
-        // get error accessing spot 30
-        System.out.println(myIntArray3[30]);
+    public static void printArray(int[] array) {
+        for (int i = 0; i < array.length; ++i) {
+            System.out.println("Element " + i + ", value is " + array[i]);
+        }
     }
 }
