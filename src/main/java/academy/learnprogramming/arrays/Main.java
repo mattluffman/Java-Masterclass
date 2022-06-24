@@ -23,13 +23,16 @@ public class Main {
         System.out.println(myIntArray2[8]);
 
         // setup using a loop
-        int[] myIntArray3 = new int[10];
-        for (int i = 0; i < 10; ++i) {
+        int[] myIntArray3 = new int[25];
+        for (int i = 0; i < myIntArray3.length; ++i) {
             myIntArray3[i] = i * 10;
         }
 
-        for (int i = 0; i < 10; ++i) {
+        for (int i = 0; i < myIntArray3.length; ++i) {
             System.out.println("Element " + i + ", value is " + myIntArray3[i]);
         }
+
+        // get error accessing spot 30
+        System.out.println(myIntArray3[30]);
     }
 }
