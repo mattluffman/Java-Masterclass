@@ -14,6 +14,8 @@ import java.util.Scanner;
  */
 public class Main {
 
+    private static final Scanner SCANNER = new Scanner(System.in);
+
     /**
      * Create a program using arrays that sorts a list of integers in descending order.
      * Descending order is highest value to lowest.
@@ -28,28 +30,43 @@ public class Main {
      * array and sort them and return the new sorted array.
      */
     public static void main(String[] args) {
-        int[] numbers = getIntegers(5);
-        // int[] numbers = {106, 26, 81, 5, 15};
-        printArray(numbers);
+        // int[] numbers = getIntegers(5);
+        int[] numbers = {106, 26, 81, 5, 15};
+
+        int[] sorted = sortIntegers(numbers);
+        printArray(sorted);
     }
 
     /**
-     * sorts int array in descending order
+     * sorts int array in descending order, first using a bubble sort, then reversing it.
+     * this is unoptimized
      *
      * @param numbers array of numbers to sort
      * @return new array that is sorted in descending order
      */
     public static int[] sortIntegers(int[] numbers) {
+        // make a copy to operate on
+        int[] sorted = numbers.clone();
 
+        for (int i = 0; i < numbers.length - 1; i++) {
+            for (int j = 0; j < numbers.length - i - 1; j++) {
+                if (sorted[j] > sorted[j + 1]) { // move j+1 into the j position
+                    int temp = sorted[j];
+                    sorted[j] = sorted[j + 1];
+                    sorted[j + 1] = temp;
+                }
+            }
+        }
+
+        return sorted;
     }
 
     public static int[] getIntegers(int number) {
         System.out.println("Enter " + number + " integer values.\r");
         int[] values = new int[number];
 
-        Scanner scanner = new Scanner(System.in);
         for (int i = 0; i < values.length; i++) {
-            values[i] = scanner.nextInt();
+            values[i] = SCANNER.nextInt();
         }
 
         return values;
