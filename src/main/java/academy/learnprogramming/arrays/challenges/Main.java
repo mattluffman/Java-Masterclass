@@ -1,5 +1,8 @@
 package academy.learnprogramming.arrays.challenges;
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 /**
  * section 8, lecture 100 - Arrays challenge
  * Dev note: I started exercise 41 back on 5/6/22. I got everything done except the sorting.
@@ -25,6 +28,35 @@ public class Main {
      * array and sort them and return the new sorted array.
      */
     public static void main(String[] args) {
+        int[] numbers = getIntegers(5);
+        // int[] numbers = {106, 26, 81, 5, 15};
+        printArray(numbers);
+    }
 
+    /**
+     * sorts int array in descending order
+     *
+     * @param numbers array of numbers to sort
+     * @return new array that is sorted in descending order
+     */
+    public static int[] sortIntegers(int[] numbers) {
+
+    }
+
+    public static int[] getIntegers(int number) {
+        System.out.println("Enter " + number + " integer values.\r");
+        int[] values = new int[number];
+
+        Scanner scanner = new Scanner(System.in);
+        for (int i = 0; i < values.length; i++) {
+            values[i] = scanner.nextInt();
+        }
+
+        return values;
+    }
+
+    public static void printArray(int[] numbers) {
+        System.out.println("Array contents");
+        System.out.println(Arrays.toString(numbers));
     }
 }
