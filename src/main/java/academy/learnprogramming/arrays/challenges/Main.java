@@ -30,8 +30,8 @@ public class Main {
      * array and sort them and return the new sorted array.
      */
     public static void main(String[] args) {
-        // int[] numbers = getIntegers(5);
-        int[] numbers = {106, 26, 81, 5, 15};
+        int[] numbers = getIntegers(5);
+        // int[] numbers = {106, 26, 81, 5, 15};
         // int[] numbers = {106, 26, 105, 81, 5, 15};
 
         int[] sorted = sortIntegers(numbers);
@@ -62,6 +62,7 @@ public class Main {
         return reverse(sorted);
     }
 
+    // TODO: try swapping algorithm outlined here: https://www.geeksforgeeks.org/reverse-an-array-in-java/
     private static int[] reverse(int[] numbers) {
         int[] reversed = new int[numbers.length];
 
