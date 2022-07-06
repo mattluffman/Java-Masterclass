@@ -32,6 +32,7 @@ public class Main {
     public static void main(String[] args) {
         // int[] numbers = getIntegers(5);
         int[] numbers = {106, 26, 81, 5, 15};
+        // int[] numbers = {106, 26, 105, 81, 5, 15};
 
         int[] sorted = sortIntegers(numbers);
         printArray(sorted);
@@ -58,7 +59,19 @@ public class Main {
             }
         }
 
-        return sorted;
+        return reverse(sorted);
+    }
+
+    private static int[] reverse(int[] numbers) {
+        int[] reversed = new int[numbers.length];
+
+        int j = numbers.length;
+        for (int i = 0; i < numbers.length; i++) {
+            reversed[j - 1] = numbers[i];
+            j -= 1; // decrement j by 1
+        }
+
+        return reversed;
     }
 
     public static int[] getIntegers(int number) {
