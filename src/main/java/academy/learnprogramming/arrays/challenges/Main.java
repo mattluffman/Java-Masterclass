@@ -36,6 +36,10 @@ public class Main {
 
         int[] sorted = sortIntegers(numbers);
         printArray(sorted);
+
+        // instructor example added below
+        sorted = sortIntegersInstructor(numbers);
+        printArrayInstructor(sorted);
     }
 
     /**
@@ -89,5 +93,46 @@ public class Main {
     public static void printArray(int[] numbers) {
         System.out.println("Array contents");
         System.out.println(Arrays.toString(numbers));
+    }
+
+    /**
+     * his version of my {@link #printArray(int[])}
+     *
+     * @param array numbers to print
+     */
+    public static void printArrayInstructor(int[] array) {
+        for (int i = 0; i < array.length; ++i) {
+            System.out.println("Element " + i + " contents " + array[i]);
+        }
+    }
+
+    /**
+     * his version of my {@link #sortIntegers(int[])}
+     *
+     * @param array numbers
+     * @return reverse sorted ints
+     */
+    public static int[] sortIntegersInstructor(int[] array) {
+        // manually create a clone
+        int[] sortedArray;// = new int[array.length];
+        // for (int i = 0; i < array.length; i++) {
+        //     sortedArray[i] = array[i];
+        // }
+        sortedArray = Arrays.copyOf(array, array.length);
+
+        boolean flag = true;
+        int temp;
+
+        while (flag) {
+            flag = false;
+            for (int i = 0; i < sortedArray.length - 1; i++) {
+                if (sortedArray[i] < sortedArray[i + 1]) {
+                    temp = sortedArray[i];
+                    sortedArray[i] = sortedArray[i + 1];
+                    sortedArray[i + 1] = temp;
+                }
+            }
+        }
+        return sortedArray;
     }
 }
