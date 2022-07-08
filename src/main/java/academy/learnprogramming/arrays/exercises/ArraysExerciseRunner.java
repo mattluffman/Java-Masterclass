@@ -11,11 +11,15 @@ public class ArraysExerciseRunner {
 
     public static void main(String[] args) {
         System.out.println("Running SortedArray exercise");
-        // runSortedArrayExercise();
+        runSortedArrayExercise();
         System.out.println("\n");
 
         System.out.println("Running MinimumElement exercise");
         runMinimumElementExercise();
+        System.out.println("\n");
+
+        System.out.println("Running ReverseArray exercise");
+        runReverseArrayExercise();
     }
 
     private static void runSortedArrayExercise() {
@@ -32,5 +36,10 @@ public class ArraysExerciseRunner {
         int[] values = MinimumElement.readElements(count);
         final int min = MinimumElement.findMin(values);
         System.out.println("Min = " + min);
+    }
+
+    private static void runReverseArrayExercise() {
+        int[] array = {1, 2, 3, 4, 5};
+        ReverseArray.reverse(array);
     }
 }
