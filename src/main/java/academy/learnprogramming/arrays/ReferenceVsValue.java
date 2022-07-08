@@ -36,6 +36,7 @@ public class ReferenceVsValue {
         System.out.println("after change myIntArray = " + Arrays.toString(myIntArray)); // [1, 0, 0, 0, 0]
         System.out.println("after change anotherArray = " + Arrays.toString(anotherArray)); // [1, 0, 0, 0, 0]
 
+        anotherArray = new int[]{4, 5, 6, 7, 8}; // derefernece before the change in modify array, it now points to new memory
         modifyArray(myIntArray);
 
         System.out.println("after modify myIntArray = " + Arrays.toString(myIntArray)); // [2, 0, 0, 0, 0]
@@ -44,5 +45,6 @@ public class ReferenceVsValue {
 
     private static void modifyArray(int[] array) {
         array[0] = 2;
+        array = new int[]{1, 2, 3, 4, 5}; // dereferencing the reference
     }
 }
