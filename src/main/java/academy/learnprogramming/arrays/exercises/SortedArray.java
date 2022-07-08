@@ -57,6 +57,7 @@ public class SortedArray {
      */
 
     public static int[] getIntegers(int arraySize) {
+        System.out.println("Enter " + arraySize + " integer values.\r");
         int[] numbers = new int[arraySize];
         try (Scanner scanner = new Scanner(System.in)) {
             int numbersCollected = 0;
@@ -78,7 +79,17 @@ public class SortedArray {
     }
 
     public static int[] sortIntegers(int[] array) {
-        int[] sorted = new int[array.length];
+        int[] sorted = array.clone();
+
+        for (int i = 0; i < array.length - 1; i++) {
+            for (int j = 0; j < array.length - i - 1; j++) {
+                if (sorted[j] <= sorted[j + 1]) { // move j+1 into the j position
+                    int temp = sorted[j];
+                    sorted[j] = sorted[j + 1];
+                    sorted[j + 1] = temp;
+                }
+            }
+        }
 
         return sorted;
     }

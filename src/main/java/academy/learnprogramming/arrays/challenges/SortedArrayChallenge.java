@@ -12,7 +12,7 @@ import java.util.Scanner;
  * Date: 6/24/2022
  * Time: 3:50 PM
  */
-public class SortedArray {
+public class SortedArrayChallenge {
 
     private static final Scanner SCANNER = new Scanner(System.in);
 
