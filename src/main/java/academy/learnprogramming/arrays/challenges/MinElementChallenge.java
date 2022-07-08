@@ -14,7 +14,9 @@ public class MinElementChallenge {
     private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int[] numbers = readIntegers(5);
+        System.out.println("Enter how many numbers you want to input");
+        int count = SCANNER.nextInt();
+        int[] numbers = readIntegers(count);
         System.out.println("minimum = " + findMin(numbers));
     }
 
