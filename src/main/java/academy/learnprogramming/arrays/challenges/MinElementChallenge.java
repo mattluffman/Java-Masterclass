@@ -22,11 +22,19 @@ public class MinElementChallenge {
 
     /**
      * stealing this from the past challenges {@link SortedArrayChallenge#getIntegers(int)}
+     *
+     * instructor example notes:
+     * he was using {@link Scanner#nextLine()} when he was reading in input.
      */
     public static int[] readIntegers(int count) {
         return SortedArrayChallenge.getIntegers(count);
     }
 
+    /**
+     * Instructor example notes:
+     * he uses {@link Integer#MAX_VALUE} as the initial min & loops through the whole array
+     * see {@link academy.learnprogramming.userinput.challenges.MinAndMaxInput} for example
+     */
     public static int findMin(int[] array) {
         int min = array[0];
         for (int i = 1; i < array.length; i++) {
