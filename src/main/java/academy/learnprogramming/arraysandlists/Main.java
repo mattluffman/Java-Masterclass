@@ -1,4 +1,4 @@
-package academy.learnprogramming.arrays;
+package academy.learnprogramming.arraysandlists;
 
 import java.util.Scanner;
 

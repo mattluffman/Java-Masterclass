@@ -1,4 +1,4 @@
-package academy.learnprogramming.arrays.exercises;
+package academy.learnprogramming.arraysandlists.exercises;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package academy.learnprogramming.arrays.exercises;
+package academy.learnprogramming.arraysandlists.exercises;
 
 import java.util.Arrays;
 
@@ -30,7 +30,7 @@ import java.util.Arrays;
 public class ReverseArray {
 
     /**
-     * this is what the assignment called for, but it's a duplicate of {@link academy.learnprogramming.arrays.challenges.ReverseArrayChallenge#reverse(int[])}
+     * this is what the assignment called for, but it's a duplicate of {@link academy.learnprogramming.arraysandlists.challenges.ReverseArrayChallenge#reverse(int[])}
      */
     public static void reverse(int[] array) {
         System.out.println("Array = " + Arrays.toString(array));

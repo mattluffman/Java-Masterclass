@@ -1,4 +1,4 @@
-package academy.learnprogramming.arrays.exercises;
+package academy.learnprogramming.arraysandlists.exercises;
 
 /**
  * section 8 exercises
