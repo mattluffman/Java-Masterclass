@@ -1,4 +1,4 @@
-package academy.learnprogramming.arraysandlists.challenges;
+package academy.learnprogramming.arraysandlists.arrays.challenges;
 
 import java.util.Arrays;
 import java.util.Scanner;
