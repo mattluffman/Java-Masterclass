@@ -5,6 +5,8 @@ import java.util.Scanner;
 /**
  * section 8, lecture 105, 106
  *
+ * with 2nd round of edits you could now change the implementation to an array & main wouldn't need to change
+ *
  * @author Matt Luffman
  * Date: 7/13/2022
  * Time: 7:03 PM
@@ -67,25 +69,23 @@ public class Main {
     }
 
     public static void modifyItem() {
-        System.out.print("Enter item number: ");
-        int itemNumber = SCANNER.nextInt();
-        SCANNER.nextLine();
+        System.out.print("Enter current item name: ");
+        String item = SCANNER.nextLine();
         System.out.print("Enter replacement item: ");
         String newItem = SCANNER.nextLine();
-        groceryList.modifyGroceryItem(itemNumber - 1, newItem);
+        groceryList.modifyGroceryItem(item, newItem);
     }
 
     public static void removeItem() {
-        System.out.print("Enter item number: ");
-        int itemNumber = SCANNER.nextInt();
-        SCANNER.nextLine();
-        groceryList.removeGroceryItem(itemNumber - 1);
+        System.out.print("Enter item name: ");
+        String item = SCANNER.nextLine();
+        groceryList.removeGroceryItem(item);
     }
 
     public static void searchForItem() {
         System.out.print("Enter item to search for: ");
         String searchItem = SCANNER.nextLine();
-        if (groceryList.findItem(searchItem) != null) {
+        if (groceryList.onFile(searchItem)) {
             System.out.println("Found " + searchItem + " in our grocery list");
         } else {
             System.out.println(searchItem + " is not in the shopping list");
