@@ -1,5 +1,7 @@
 package academy.learnprogramming.arraysandlists.arraylist;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -46,6 +48,9 @@ public class Main {
                     searchForItem();
                     break;
                 case 6:
+                    processArrayList();
+                    break;
+                case 7:
                     quit = true;
                     break;
             }
@@ -60,7 +65,8 @@ public class Main {
         System.out.println("\t 3 - To modify an item in the list.");
         System.out.println("\t 4 - To remove an item from the list.");
         System.out.println("\t 5 - To search for an item in the list.");
-        System.out.println("\t 6 - To quit the application.");
+        System.out.println("\t 6 - To use copy methods");
+        System.out.println("\t 7 - To quit the application.");
     }
 
     public static void addItem() {
@@ -90,5 +96,24 @@ public class Main {
         } else {
             System.out.println(searchItem + " is not in the shopping list");
         }
+    }
+
+    /**
+     * ways to copy
+     */
+    private static void processArrayList() {
+        // first way
+        ArrayList<String> newArrayList = new ArrayList<>();
+        newArrayList.addAll(groceryList.getGroceryList());
+        System.out.println("new Array List: " + newArrayList);
+
+        // 2nd way
+        ArrayList<String> nextArrayList = new ArrayList<>(groceryList.getGroceryList());
+        System.out.println("next Array List: " + nextArrayList);
+
+        // 3rd way
+        String[] myArray = new String[groceryList.getGroceryList().size()];
+        myArray = groceryList.getGroceryList().toArray(myArray);
+        System.out.println("new array: " + Arrays.toString(myArray));
     }
 }
